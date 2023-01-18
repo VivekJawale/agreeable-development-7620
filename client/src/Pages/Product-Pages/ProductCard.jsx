@@ -5,7 +5,7 @@ import {AiFillStar} from 'react-icons/ai';
 import {FiShoppingCart} from 'react-icons/fi';
 
 
-const SingleProduct = ({props}) => {
+const ProductCard = ({props}) => {
 
 
   return (
@@ -53,4 +53,4 @@ const SingleProduct = ({props}) => {
   )
 }
 
-export default SingleProduct
+export default ProductCard
