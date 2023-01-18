@@ -5,7 +5,7 @@ import Cart from '../Pages/Cart';
 import Protiens from '../Pages/Product-Pages/Protiens';
 import Wishlist from '../Pages/Wishlist';
 import SingleProduct from "../Pages/SingleProduct";
-
+import Home from '../Pages/Home'
 const MainRoutes = () => {
   return (
     <div>
