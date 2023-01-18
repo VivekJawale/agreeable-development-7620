@@ -1,0 +1,216 @@
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 620px;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    line-height: 1.5;
+    color: #000000;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    /* margin-bottom: 720px; */
+  }
+  .bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 40px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: rise 5s infinite ease-in;
+    width: 100px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent 35%, #0DCCC5 35%, #0DCCC5 65%,  transparent 65%),
+    linear-gradient(to right, transparent 35%, #0DCCC5 35%, #0DCCC5 65%, transparent 65%);
+  }
+  .bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-duration: 5s;
+  }
+  .bubble:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+  }
+  .bubble:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    animation-duration: 5s;
+    animation-delay: 2s;
+  }
+  .bubble:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    animation-duration: 5s;
+    animation-delay: 0s;
+  }
+  .bubble:nth-child(5) {
+    width: 35px;
+    height: 35px;
+    left: 55%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+  }
+  .bubble:nth-child(6) {
+    width: 45px;
+    height: 45px;
+    left: 65%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+  }
+  .bubble:nth-child(7) {
+    width: 90px;
+    height: 90px;
+    left: 70%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+  }
+  .bubble:nth-child(8) {
+    width: 25px;
+    height: 25px;
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+  }
+  .bubble:nth-child(9) {
+    width: 15px;
+    height: 15px;
+    left: 70%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+  }
+  .bubble:nth-child(10) {
+    width: 90px;
+    height: 90px;
+    left: 25%;
+    animation-duration: 10s;
+    animation-delay: 4s;
+  }
+  .bubble:nth-child(11) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-duration: 5s;
+  }
+  .bubble:nth-child(12) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+  }
+  .bubble:nth-child(13) {
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    animation-duration: 5s;
+    animation-delay: 2s;
+  }
+  .bubble:nth-child(14) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    animation-duration: 5s;
+    animation-delay: 0s;
+  }
+  .bubble:nth-child(15) {
+    width: 35px;
+    height: 35px;
+    left: 55%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+  }
+  .bubble:nth-child(16) {
+    width: 45px;
+    height: 45px;
+    left: 65%;
+    animation-duration: 4s;
+    animation-delay: 3s;
+  }
+  .bubble:nth-child(17) {
+    width: 90px;
+    height: 90px;
+    left: 70%;
+    animation-duration: 5s;
+    animation-delay: 2s;
+  }
+  .bubble:nth-child(18) {
+    width: 25px;
+    height: 25px;
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+  }
+  .bubble:nth-child(19) {
+    width: 15px;
+    height: 15px;
+    left: 70%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+  }
+  .bubble:nth-child(20) {
+    width: 90px;
+    height: 90px;
+    left: 25%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+  }
+  @keyframes rise {
+    0% {
+      bottom: 0px;
+      transform: translateX(0);
+    }
+    50% {
+      transform: translate(100px);
+    }
+    100% {
+      bottom: 100%;
+      transform: translateX(-200px);
+    }
+  }
+  .welcome_admin{
+    width: 100%;
+    height: 100vh;
+    background: rgb(13,204,197);
+background: -moz-linear-gradient(180deg, rgba(13,204,197,1) 0%, rgba(255,255,255,1) 100%);
+background: -webkit-linear-gradient(180deg, rgba(13,204,197,1) 0%, rgba(255,255,255,1) 100%);
+background: linear-gradient(180deg, rgba(13,204,197,1) 0%, rgba(255,255,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0dccc5",endColorstr="#ffffff",GradientType=1);
+  }
+  .welcome_message{
+       width: 50%;
+       margin: auto;
+       height: 100%;
+       display: flex;
+       align-items: center;
+       flex-direction: column;
+       justify-content: center;
+  }
+  .welcome_message h1{
+    color: #ffffff; z-index: 1111;
+  }
+  .welcome_message button{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #0DCCC5;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: none;
+    color: white;
+    font-size: medium;
+    z-index: 1111;
+  }
+  .welcome_message button:hover{
+    
+  }
