@@ -27,9 +27,6 @@ const ProductCard = ({props}) => {
             </Box>
             <Text fontSize="16px">{props.star_rating} reviews</Text>
           </Box>
-          <Box boxSize="15px" display="flex" fontSize="60px" justifyContent="cneter" alignItems="center" border="2px solid green" color="green">
-            <Text mt="16px">.</Text>
-          </Box>
         </Box>
         <Text h="40px" overflow="clip" fontFamily="'Trebuchet MS', sans-serif" color="#424040" >{props.name}</Text>
         <Box w="58%" display="flex" justifyContent="space-between" alignItems="center">
