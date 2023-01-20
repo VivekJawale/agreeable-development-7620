@@ -6,6 +6,7 @@ import Cart from '../Pages/Cart';
 import Protiens from '../Pages/Product-Pages/Protiens';
 import Wishlist from '../Pages/Wishlist';
 import SingleProduct from "../Pages/SingleProduct";
+import MyAccount from '../Pages/MyAccount';
 // import Home from '../Pages/Home'
 const MainRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const MainRoutes = () => {
         <Route path='/products/:id' element={<SingleProduct />}></Route>
         <Route path='/wishlist' element={<Wishlist />}></Route>
         <Route path='/cart' element={<Cart />}></Route>
+        <Route path='/account' element={<MyAccount />}></Route>
       </Routes>
     </div>
   )
