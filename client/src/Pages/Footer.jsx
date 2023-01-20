@@ -30,60 +30,60 @@ const Footer = () => {
                 <Col className='footerlists' xs={3} lg={2} >
                       <h6>HealthMart</h6>
                       <ul>
-                          <li>About Us</li>
-                          <li>Contact Us</li>
-                          <li>Refer & Earn</li>
-                          <li>Loyalty Program</li>
-                          <li>HK Consult</li>
-                          <li>Blogs, Videos & More</li>
-                          <li>Brand Directory</li>
-                          <li>Authenticity Guaranteed</li>
-                          <li>Careers</li>
+                          <li><a href='='>About Us</a></li>
+                          <li><a href='='>Contact Us</a></li>
+                          <li><a href='='>Refer & Earn</a></li>
+                          <li><a href='='>Loyalty Program</a></li>
+                          <li><a href='='>HK Consult</a></li>
+                          <li><a href='='>Blogs, Videos & More</a></li>
+                          <li><a href='='>Brand Directory</a></li>
+                          <li><a href='='>Authenticity Guaranteed</a></li>
+                          <li><a href='='>Careers</a></li>
                       </ul>
                 </Col>
                 <Col className='footerlists' xs={2} lg={1} >
                       <h6>Brands</h6>
                       <ul className='brands-list'>
-                          <li>MuscleBlaze</li>
-                          <li>Fit Foods</li>
-                          <li>HK Vitals</li>
-                          <li>TrueBasics</li>
-                          <li>Gritzo</li>
-                          <li>bGREEN</li>
+                          <li><a href='='>MuscleBlaze</a></li>
+                          <li><a href='='>Fit Foods</a></li>
+                          <li><a href='='>HK Vitals</a></li>
+                          <li><a href='='>TrueBasics</a></li>
+                          <li><a href='='>Gritzo</a></li>
+                          <li><a href='='>bGREEN</a></li>
                       </ul>
                 </Col>
                 <Col className='footerlists' xs={3} lg={2} >
                       <h6>Health & Fitness</h6>
                       <ul>
-                          <li>Bodybuilding</li>
-                          <li>Hair & Skin Care</li>
-                          <li>Sports Nutrition</li>
-                          <li>Vitamins & Supplements</li>
-                          <li>Ayurveda & Herbs</li>
-                          <li>Health Food & Drinks</li>
-                          <li>Fitness</li>
-                          <li>Wellness</li>
+                          <li><a href='='>Bodybuilding</a></li>
+                          <li><a href='='>Hair & Skin Care</a></li>
+                          <li><a href='='>Sports Nutrition</a></li>
+                          <li><a href='='>Vitamins & Supplements</a></li>
+                          <li><a href='='>Ayurveda & Herbs</a></li>
+                          <li><a href='='>Health Food & Drinks</a></li>
+                          <li><a href='='>Fitness</a></li>
+                          <li><a href='='>Wellness</a></li>
                       </ul>
                 </Col>
                 <Col className='footerlists' xs={3} lg={2} >
                       <h6>Quick Links</h6>
                       <ul>
-                          <li>My Account</li>
-                          <li>Track Your Order</li>
-                          <li>Store Locator</li>
-                          <li>HK Cash</li>
-                          <li>HK Coupons</li>
-                          <li>FAQs</li>
-                          <li>Sell On HealthKart</li>
+                          <li><a href='='>My Account</a></li>
+                          <li><a href='='>Track Your Order</a></li>
+                          <li><a href='='>Store Locator</a></li>
+                          <li><a href='='>HK Cash</a></li>
+                          <li><a href='='>HK Coupons</a></li>
+                          <li><a href='='>FAQs</a></li>
+                          <li><a href='='>Sell On HealthKart</a></li>
                       </ul>
                 </Col>
                 <Col className='footerlists' xs={3} lg={2} >
                       <h6>Contact Us</h6>
                       <ul>
-                          <li>care@healthkart.com</li>
-                          <li>0124-4616444</li>
-                          <li>The Presidency Tower, Tower-B, 2nd Floor, 46/4, Mehrauli Rd opp. 
-                              government girls college, Anamika Enclave, Sector 14, Gurugram, Haryana
+                          <li><a href='='>care@healthkart.com</a></li>
+                          <li><a href='='>0124-4616444</a></li>
+                          <li><a href='='>The Presidency Tower, Tower-B, 2nd Floor, 46/4, Mehrauli Rd opp. 
+                              government girls college, Anamika Enclave, Sector 14, Gurugram, Haryana</a>
                           </li>
                       </ul>
                 </Col>
