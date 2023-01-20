@@ -23,7 +23,7 @@ const ProductCard = ({props}) => {
           <Box w="53%" display="flex" justifyContent="space-between" alignItems="center">
             <Box bg="#2eb8b8" p="5px 10px" display="flex" justifyContent="space-between" alignItems="center">
               <Text m="0" color="white" fontSize="15px">{props.star_rating}</Text>
-              <Icon m="0" boxSize={4} color="white" as={AiFillStar}/>
+              <Icon m="0" boxSize={14} color="white" as={AiFillStar}/>
             </Box>
             <Text fontSize="16px">{props.star_rating} reviews</Text>
           </Box>
@@ -37,7 +37,7 @@ const ProductCard = ({props}) => {
         <Box bg="#f1f4f4">
           <Box w="85%" m="auto" p="0" display="flex" justifyContent="space-between" alignItems="center">
             <Box boxSize="22px" display="flex" justifyContent="center" alignItems="center" border="1px solid #f66809" rounded="50%">
-              <Icon m="0" boxSize={4} color="#f66809" as={AiFillStar}/>
+              <Icon m="0" boxSize={14} color="#f66809" as={AiFillStar}/>
             </Box>
             <Text color="#424040" fontSize="16px">₹ {props.bold? props.bold:props.price1}</Text>
             <Text color="#424040" fontSize="16px"> for Premium Member</Text>
