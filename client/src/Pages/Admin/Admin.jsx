@@ -3,485 +3,95 @@ import Aos from "aos";
 import { useEffect } from "react";
 import "./admincomponents/admin.css";
 import "aos/dist/aos.css";
-// import { Box,  Select, Text } from '@chakra-ui/react'
-import { Box, CardBody, Icon, Image, Text } from '@chakra-ui/react'
-import { BiHeart } from 'react-icons/bi';
-import {AiFillStar} from 'react-icons/ai';
-import Button from "react-bootstrap/Button";
-import AdminProductEdit from "./admincomponents/AdminProductEdit";
-// import AdminProductCard from "./admincomponents/AdminproductCard";
-import Modal from 'react-bootstrap/Modal';
-import AdminProductCard, { AdminproductCard } from "./admincomponents/AdminProductCard";
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import ListGroup from 'react-bootstrap/ListGroup';
+import AdminProductCard, {
+  AdminproductCard,
+} from "./admincomponents/AdminProductCard";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Form from "react-bootstrap/Form";
+import { useState } from "react";
+import axios from "axios";
+import Pagination from 'react-bootstrap/Pagination';
+import Placeholder from 'react-bootstrap/Placeholder';
+import Footer from "../Footer";
+
 
 const Admin = () => {
   const [modalShow, setModalShow] = React.useState(false);
+  const [data, setdata] = useState([]);
+  const [filterTerm, setFilter] = useState("");
+  const [loading,setLoading]=useState(true);
+  const [page,setPage]=useState(1);
+  const [totalPages,SetTotalPages]=useState(41);
+  const [sort,setSort]=useState("");
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
 
-  const data= [
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/muscleblaze-biozyme-performance-whey/SP-84971?navKey=VRNT-208116&itracker=w:bestseller|undefined||;p:1|;e:208116|;",
-      "image": "https://img5.hkrtcdn.com/22806/prd_2280584_c_s.jpg",
-      "star_rating": 4.4,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "2.6k reviews",
-      "block href": "https://www.healthkart.com/sv/muscleblaze-biozyme-performance-whey/SP-84971?navKey=VRNT-208116&itracker=w:bestseller||;p:1|;e:208116|;",
-      "name": "MuscleBlaze Biozyme Performance Whey-   4.4 lb  Special Edition Pack (75th Indian Army Day) Triple Chocolate",
-      "price1": 4499,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 6399,
-      "discount": 29,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "4,364",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/on-optimum-nutrition-gold-standard-100-whey-protein/SP-9558?navKey=VRNT-14662&itracker=w:bestseller|undefined||;p:2|;e:14662|;",
-      "image": "https://img3.hkrtcdn.com/18797/prd_1879652-ON-Optimum-Nutrition-Gold-Standard-100-Whey-Protein-5-lb-Double-Rich-Chocolate_c_s.jpg",
-      "star_rating": 4.4,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "3.2k reviews",
-      "block href": "https://www.healthkart.com/sv/on-optimum-nutrition-gold-standard-100-whey-protein/SP-9558?navKey=VRNT-14662&itracker=w:bestseller||;p:2|;e:14662|;",
-      "name": "ON (Optimum Nutrition) Gold Standard 100% Whey Protein-   5 lb  Double Rich Chocolate",
-      "price1": 6741,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 8099,
-      "discount": 16,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "6,539",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/gnc-pro-performance-power-protein/SP-109382?navKey=VRNT-204846&itracker=w:bestseller|undefined||;p:3|;e:204846|;",
-      "image": "https://img1.hkrtcdn.com/22238/prd_2223760_c_s.jpg",
-      "star_rating": 4,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "4 reviews",
-      "block href": "https://www.healthkart.com/sv/gnc-pro-performance-power-protein/SP-109382?navKey=VRNT-204846&itracker=w:bestseller||;p:3|;e:204846|;",
-      "name": "GNC Pro Performance Power Protein-   4 lb  Double Rich Chocolate + FREE Patchauli Unisex Perfume by Bella Vita Luxury",
-      "price1": 3999,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 6599,
-      "discount": 39,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "3,799",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/muscletech-nitrotech-whey-protein/SP-85729?navKey=VRNT-182370&itracker=w:bestseller|undefined||;p:4|;e:182370|;",
-      "image": "https://img3.hkrtcdn.com/18457/prd_1845622-MuscleTech-Nitro-Tech-Whey-Protein-4.4-lb-Milk-Chocolate_c_s.jpg",
-      "star_rating": 4.2,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "57 reviews",
-      "block href": "https://www.healthkart.com/sv/muscletech-nitrotech-whey-protein/SP-85729?navKey=VRNT-182370&itracker=w:bestseller||;p:4|;e:182370|;",
-      "name": "MuscleTech NitroTech Whey Protein-   4.4 lb  Milk Chocolate - India",
-      "price1": 6199,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 7799,
-      "discount": 20,
-      "premium-icon src": "",
-      "bold": "",
-      "msg-content": ""
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/mb-fuel-one-whey-protein-immunityplus/SP-72195?navKey=VRNT-152117&itracker=w:bestseller|undefined||;p:5|;e:152117|;",
-      "image": "https://img5.hkrtcdn.com/19801/prd_1980004_c_s.jpg",
-      "star_rating": 4.3,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "1.6k reviews",
-      "block href": "https://www.healthkart.com/sv/mb-fuel-one-whey-protein-immunityplus/SP-72195?navKey=VRNT-152117&itracker=w:bestseller||;p:5|;e:152117|;",
-      "name": "MB Fuel One Whey Protein Immunity+-   4.4 lb  Chocolate",
-      "price1": 3549,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 5099,
-      "discount": 30,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "3,443",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/muscleblaze-whey-protein/SP-8686?navKey=VRNT-125913&itracker=w:bestseller|undefined||;p:6|;e:125913|;",
-      "image": "https://img6.hkrtcdn.com/12133/prd_1213295-MuscleBlaze-Whey-Protein-4-lb-Rich-Milk-Chocolate_c_s.jpg",
-      "star_rating": 4.4,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "3.6k reviews",
-      "block href": "https://www.healthkart.com/sv/muscleblaze-whey-protein/SP-8686?navKey=VRNT-125913&itracker=w:bestseller||;p:6|;e:125913|;",
-      "name": "MuscleBlaze Whey Protein-   4 lb  Rich Milk Chocolate",
-      "price1": 4849,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 6399,
-      "discount": 24,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "4,704",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/dymatize-elite-100-whey-protein/SP-9720?navKey=VRNT-15016&itracker=w:bestseller|undefined||;p:7|;e:15016|;",
-      "image": "https://img3.hkrtcdn.com/20007/prd_2000612-Dymatize-Elite-100-Whey-Protein-5-lb-Rich-Chocolate_c_s.jpg",
-      "star_rating": 4.3,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "373 reviews",
-      "block href": "https://www.healthkart.com/sv/dymatize-elite-100-whey-protein/SP-9720?navKey=VRNT-15016&itracker=w:bestseller||;p:7|;e:15016|;",
-      "name": "Dymatize Elite 100% Whey Protein-   5 lb  Rich Chocolate",
-      "price1": 7727,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 1999,
-      "discount": 29,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "7,341",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/muscleblaze-biozyme-whey-protein/SP-66685?navKey=VRNT-134799&itracker=w:bestseller|undefined||;p:8|;e:134799|;",
-      "image": "https://img10.hkrtcdn.com/12134/prd_1213319-MuscleBlaze-Biozyme-Whey-Protein-4.4-lb-Rich-Milk-Chocolate_c_s.jpg",
-      "star_rating": 4.5,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "1.6k reviews",
-      "block href": "https://www.healthkart.com/sv/muscleblaze-biozyme-whey-protein/SP-66685?navKey=VRNT-134799&itracker=w:bestseller||;p:8|;e:134799|;",
-      "name": "MuscleBlaze Biozyme Whey Protein-   4.4 lb  Rich Milk Chocolate",
-      "price1": 5599,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 7449,
-      "discount": 24,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "5,431",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/myprotein-impact-whey-protein/SP-37697?navKey=VRNT-69553&itracker=w:bestseller|undefined||;p:9|;e:69553|;",
-      "image": "https://img1.hkrtcdn.com/18137/prd_1813600-Myprotein-Impact-Whey-Protein-5.5-lb-Chocolate-Smooth_c_s.jpg",
-      "star_rating": 4.1,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "594 reviews",
-      "block href": "https://www.healthkart.com/sv/myprotein-impact-whey-protein/SP-37697?navKey=VRNT-69553&itracker=w:bestseller||;p:9|;e:69553|;",
-      "name": "Myprotein Impact Whey Protein-   5.5 lb  Chocolate Smooth",
-      "price1": 7298,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 8999,
-      "discount": 18,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "6,933",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/ultimate-nutrition-prostar-100-whey-protein/SP-9929?navKey=VRNT-15398&itracker=w:bestseller|undefined||;p:10|;e:15398|;",
-      "image": "https://img1.hkrtcdn.com/1691/prd_169080_c_s.jpg",
-      "star_rating": 4.6,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "2.5k reviews",
-      "block href": "https://www.healthkart.com/sv/ultimate-nutrition-prostar-100-whey-protein/SP-9929?navKey=VRNT-15398&itracker=w:bestseller||;p:10|;e:15398|;",
-      "name": "Ultimate Nutrition Prostar 100% Whey Protein-   5.28 lb  Chocolate Creme",
-      "price1": 7149,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 9499,
-      "discount": 24,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "6,792",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/muscleblaze-whey-gold-protein/SP-42838?navKey=VRNT-77603&itracker=w:bestseller|undefined||;p:11|;e:77603|;",
-      "image": "https://img2.hkrtcdn.com/12134/prd_1213301-MuscleBlaze-Whey-Gold-Protein-4.4-lb-Rich-Milk-Chocolate_c_s.jpg",
-      "star_rating": 4.5,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "2k reviews",
-      "block href": "https://www.healthkart.com/sv/muscleblaze-whey-gold-protein/SP-42838?navKey=VRNT-77603&itracker=w:bestseller||;p:11|;e:77603|;",
-      "name": "MuscleBlaze Whey Gold Protein-   4.4 lb  Rich Milk Chocolate",
-      "price1": 6499,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 8669,
-      "discount": 25,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "6,304",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/mb-fuel-one-whey-protein-powder-immunityplus/SP-84791?navKey=VRNT-158713&itracker=w:bestseller|undefined||;p:12|;e:158713|;",
-      "image": "https://img2.hkrtcdn.com/13039/prd_1303871-MB-Fuel-One-Whey-Protein-Immunity-OP-2.2-lb-Chocolate_c_s.jpg",
-      "star_rating": 4.5,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "11 reviews",
-      "block href": "https://www.healthkart.com/sv/mb-fuel-one-whey-protein-powder-immunityplus/SP-84791?navKey=VRNT-158713&itracker=w:bestseller||;p:12|;e:158713|;",
-      "name": "MB Fuel One Whey Protein Powder Immunity+-   2.2 lb  Chocolate",
-      "price1": 1749,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 2669,
-      "discount": 34,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "1,697",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/big-muscles-essential-whey-protein/SP-97030?navKey=VRNT-180732&itracker=w:bestseller|undefined||;p:13|;e:180732|;",
-      "image": "https://img9.hkrtcdn.com/18191/prd_1819008-Big-Muscles-Essential-Whey-Protein-2.2-lb-Dutch-Chocolate_c_s.jpg",
-      "star_rating": 4.3,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "72 reviews",
-      "block href": "https://www.healthkart.com/sv/big-muscles-essential-whey-protein/SP-97030?navKey=VRNT-180732&itracker=w:bestseller||;p:13|;e:180732|;",
-      "name": "Big Muscles Essential Whey Protein-   2.2 lb  Dutch Chocolate",
-      "price1": 1049,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 1599,
-      "discount": 34,
-      "premium-icon src": "",
-      "bold": "",
-      "msg-content": ""
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/one-science-100-premium-whey-protein/SP-57979?navKey=VRNT-140581&itracker=w:bestseller|undefined||;p:14|;e:140581|;",
-      "image": "https://img7.hkrtcdn.com/20011/prd_2001006-One-Science-100-Premium-Whey-Protein-5-lb-Chocolate-Charge_c_s.jpg",
-      "star_rating": 4.2,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "79 reviews",
-      "block href": "https://www.healthkart.com/sv/one-science-100-premium-whey-protein/SP-57979?navKey=VRNT-140581&itracker=w:bestseller||;p:14|;e:140581|;",
-      "name": "One Science 100% Premium Whey Protein-   5 lb  Chocolate Charge",
-      "price1": 5640,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 8499,
-      "discount": 33,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "5,358",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/gnc-amp-gold-series-100-whey-protein-advanced/SP-58855?navKey=VRNT-104127&itracker=w:bestseller|undefined||;p:15|;e:104127|;",
-      "image": "https://img6.hkrtcdn.com/12586/prd_1258555-GNC-Amp-Gold-Series-100-Whey-Protein-Advanced-4.4-lb-Double-Rich-Chocolate_c_s.jpg",
-      "star_rating": 4.2,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "70 reviews",
-      "block href": "https://www.healthkart.com/sv/gnc-amp-gold-series-100-whey-protein-advanced/SP-58855?navKey=VRNT-104127&itracker=w:bestseller||;p:15|;e:104127|;",
-      "name": "GNC Amp Gold Series 100% Whey Protein Advanced-   4.4 lb  Double Rich Chocolate",
-      "price1": 6499,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 8999,
-      "discount": 27,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "6,174",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/asitis-nutrition-atom-whey-protein-with-enzymes/SP-108160?navKey=VRNT-202436&itracker=w:bestseller|undefined||;p:16|;e:202436|;",
-      "image": "https://img7.hkrtcdn.com/21498/prd_2149716-Asitis-Nutrition-ATOM-Whey-Protein-with-Enzymes-2.2-lb-Double-Rich-Chocolate_c_s.jpg",
-      "star_rating": null,
-      "star_rating src": "",
-      "flexing-reviews": "",
-      "block href": "https://www.healthkart.com/sv/asitis-nutrition-atom-whey-protein-with-enzymes/SP-108160?navKey=VRNT-202436&itracker=w:bestseller||;p:16|;e:202436|;",
-      "name": "Asitis Nutrition ATOM Whey Protein with Enzymes-   2.2 lb  Double Rich Chocolate",
-      "price1": 2399,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 2599,
-      "discount": 7,
-      "premium-icon src": "",
-      "bold": "",
-      "msg-content": ""
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/nakpro-whey-gold-whey-protein-concentrate/SP-91447?navKey=VRNT-170243&itracker=w:bestseller|undefined||;p:17|;e:170243|;",
-      "image": "https://img6.hkrtcdn.com/15137/prd_1513675-Nakpro-Whey-Gold-Whey-Protein-Concentrate-2.2-lb-Chocolate_c_s.jpg",
-      "star_rating": 4.3,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "77 reviews",
-      "block href": "https://www.healthkart.com/sv/nakpro-whey-gold-whey-protein-concentrate/SP-91447?navKey=VRNT-170243&itracker=w:bestseller||;p:17|;e:170243|;",
-      "name": "Nakpro Whey Gold Whey Protein Concentrate-   2.2 lb  Chocolate",
-      "price1": 1699,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 2999,
-      "discount": 43,
-      "premium-icon src": "",
-      "bold": "",
-      "msg-content": ""
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/nutrabay-gold-vital-whey-protein/SP-108052?navKey=VRNT-202306&itracker=w:bestseller|undefined||;p:18|;e:202306|;",
-      "image": "https://img5.hkrtcdn.com/21486/prd_2148584-Nutrabay-Gold-Vital-Whey-Protein-2.2-lb-Belgian-Chocolate_c_s.jpg",
-      "star_rating": null,
-      "star_rating src": "",
-      "flexing-reviews": "",
-      "block href": "https://www.healthkart.com/sv/nutrabay-gold-vital-whey-protein/SP-108052?navKey=VRNT-202306&itracker=w:bestseller||;p:18|;e:202306|;",
-      "name": "Nutrabay Gold Vital Whey Protein-   2.2 lb  Belgian Chocolate",
-      "price1": 949,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 1999,
-      "discount": 52,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "902",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/muscleblaze-whey-gold-with-digezyme/SP-65049?navKey=VRNT-115551&itracker=w:bestseller|undefined||;p:19|;e:115551|;",
-      "image": "https://img2.hkrtcdn.com/8194/prd_819321-MuscleBlaze-Whey-Gold-with-Digezyme-8.8-lb-Rich-Milk-Chocolate_c_s.jpg",
-      "star_rating": 4.6,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "97 reviews",
-      "block href": "https://www.healthkart.com/sv/muscleblaze-whey-gold-with-digezyme/SP-65049?navKey=VRNT-115551&itracker=w:bestseller||;p:19|;e:115551|;",
-      "name": "MuscleBlaze Whey Gold with Digezyme-   8.8 lb  Rich Milk Chocolate",
-      "price1": 11000,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 1699,
-      "discount": 29,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "10,670",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/nakpro-perform-whey-protein-concentrate/SP-91451?navKey=VRNT-170261&itracker=w:bestseller|undefined||;p:20|;e:170261|;",
-      "image": "https://img6.hkrtcdn.com/15136/prd_1513585-Nakpro-Perform-Whey-Protein-Concentrate-2.2-lb-Chocolate_c_s.jpg",
-      "star_rating": 4.1,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "150 reviews",
-      "block href": "https://www.healthkart.com/sv/nakpro-perform-whey-protein-concentrate/SP-91451?navKey=VRNT-170261&itracker=w:bestseller||;p:20|;e:170261|;",
-      "name": "Nakpro Perform Whey Protein Concentrate-   2.2 lb  Chocolate",
-      "price1": 1448,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 2299,
-      "discount": 37,
-      "premium-icon src": "",
-      "bold": "",
-      "msg-content": ""
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/xlr8-flavoured-whey-protein-24-g-protein/SP-80127?navKey=VRNT-150467&itracker=w:bestseller|undefined||;p:21|;e:150467|;",
-      "image": "https://img5.hkrtcdn.com/20215/prd_2021494-XLR8-Flavoured-Whey-Protein-24-g-Protein-2-lb-Chocolate_c_s.jpg",
-      "star_rating": 4.3,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "352 reviews",
-      "block href": "https://www.healthkart.com/sv/xlr8-flavoured-whey-protein-24-g-protein/SP-80127?navKey=VRNT-150467&itracker=w:bestseller||;p:21|;e:150467|;",
-      "name": "XLR8 Flavoured Whey Protein 24 g Protein-   2 lb  Chocolate",
-      "price1": 1698,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 2700,
-      "discount": 37,
-      "premium-icon src": "",
-      "bold": "",
-      "msg-content": ""
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/on-optimum-nutrition-performance-whey/SP-8709?navKey=VRNT-171207&itracker=w:bestseller|undefined||;p:22|;e:171207|;",
-      "image": "https://img9.hkrtcdn.com/19475/prd_1947438-ON-Optimum-Nutrition-Performance-Whey-2.2-lb-Chocolate-Milkshake_c_s.jpg",
-      "star_rating": 4,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "43 reviews",
-      "block href": "https://www.healthkart.com/sv/on-optimum-nutrition-performance-whey/SP-8709?navKey=VRNT-171207&itracker=w:bestseller||;p:22|;e:171207|;",
-      "name": "ON (Optimum Nutrition) Performance Whey-   2.2 lb  Chocolate Milkshake",
-      "price1": 2814,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 3199,
-      "discount": 12,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "2,730",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/musclepharm-combat-100-whey/SP-40185?navKey=VRNT-73257&itracker=w:bestseller|undefined||;p:23|;e:73257|;",
-      "image": "https://img9.hkrtcdn.com/19911/prd_1991048-MusclePharm-Combat-100-Whey-5-lb-Chocolate-Milk_c_s.jpg",
-      "star_rating": 4.2,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "37 reviews",
-      "block href": "https://www.healthkart.com/sv/musclepharm-combat-100-whey/SP-40185?navKey=VRNT-73257&itracker=w:bestseller||;p:23|;e:73257|;",
-      "name": "MusclePharm Combat 100% Whey-   5 lb  Chocolate Milk",
-      "price1": 6798,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 8199,
-      "discount": 17,
-      "premium-icon src": "https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg",
-      "bold": "6,458",
-      "msg-content": "for Premium Member"
-    },
-    {
-      "variant-img-container href": "https://www.healthkart.com/sv/muscletech-nitrotech-100-whey-gold/SP-44389?navKey=VRNT-90443&itracker=w:bestseller|undefined||;p:24|;e:90443|;",
-      "image": "https://img9.hkrtcdn.com/18228/prd_1822728-MuscleTech-Nitrotech-100-Whey-Gold-5.54-lb-Double-Rich-Chocolate_c_s.jpg",
-      "star_rating": 4.1,
-      "star_rating src": "https://static1.hkrtcdn.com/hknext/static/media/common/misc/small_star_empty.svg",
-      "flexing-reviews": "30 reviews",
-      "block href": "https://www.healthkart.com/sv/muscletech-nitrotech-100-whey-gold/SP-44389?navKey=VRNT-90443&itracker=w:bestseller||;p:24|;e:90443|;",
-      "name": "MuscleTech Nitrotech 100% Whey Gold-   5.03 lb  Double Rich Chocolate",
-      "price1": 6599,
-      "category": "whey",
-      "quantity": 3,
-      "reviews": [],
-      "ratings": [],
-      "price2": 7999,
-      "discount": 17,
-      "premium-icon src": "",
-      "bold": "",
-      "msg-content": ""
+  useEffect(() => {
+    if (filterTerm == "") {
+      setLoading(true);
+    
+      axios
+        .get(`https://kind-cyan-piglet-coat.cyclic.app/product?page=${page}`)
+        .then((res) => {
+          // console.log(res);
+          setLoading(false);
+         
+            setdata(res.data);
+
+         
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false)
+        });
+    } else {
+      // console.log(filterTerm);
+      setLoading(true);
+      if(filterTerm=="whey"){
+        SetTotalPages(2);
+      }
+      else if(filterTerm=="prepostworkout"){
+        SetTotalPages(7);
+      }
+      else if(filterTerm=="proteinfoods"){
+        SetTotalPages(19);
+      }
+      else if(filterTerm=="weightmanagement"){
+        SetTotalPages(10)
+      }
+      else if(filterTerm=="WheyProteinIsolate"){
+        SetTotalPages(7)
+      }
+      else if(filterTerm=="gainers"){
+        SetTotalPages(37)
+      }
+      else{
+        SetTotalPages(3)
+      }
+      axios
+        .get(
+          `https://kind-cyan-piglet-coat.cyclic.app/product?category=${filterTerm}&page=${page}&priceSort=${sort}`
+        )
+        .then((res) => {
+          if(res.data==[] || res.data==undefined){
+             setPage(1)
+          }
+          else{
+            setdata(res.data);
+            setLoading(false)
+          }
+         
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false)
+        });
     }
-  ]
+  }, [filterTerm,page,sort]);
 
   return (
     <>
@@ -538,19 +148,151 @@ const Admin = () => {
           <p>Look for product you want to change and change it.</p>
         </div>
       </div>
+     {filterTerm==""?
+     <div style={{width:"20%",height:"100px"}}></div>
+     :<div style={{width:"20%",height:"100px",marginLeft:"70%"}}>
+     <Form.Select value={sort} onChange={(e)=>{setSort(e.target.value)}} aria-label="Default select example">
+      <option>Sort By</option>
+      <option value="asc">Low to High</option>
+      <option value="desc">High to Low</option>
+    </Form.Select>
+     </div>}
 
-       
-      <Row xs={1} md={2} lg={3} className="g-4">
-      {data.map((el) => (
-        <Col>
-         <AdminproductCard el={el}/>
-        </Col>
-      ))}
-    </Row>
-      
-      
+      <div className="all_products_main">
+        <div className="left_filter_admin">
+          <div>
+           {filterTerm==""?<p>You can filter by category</p>:<p>Filtered by : {filterTerm} <span onClick={()=>{setFilter("")}} style={{color:"0dccc5",marginLeft:"30px"}}>Reset</span> </p>}
+          </div>
+          <div>
+            <h3 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px",marginBottom:"5px"}}>Categories</h3>
+          </div>
+          {["radio"].map((type) => (
+            <div key={`reverse-${type}`} style={{height:"250px",display:"flex",alignItems:"flex-start",justifyContent:"space-evenly",flexDirection:"column"}} className="mb-3">
+              <Form.Check
+                label="Whey"
+                name="group1"
+                type={type}
+                value="whey"
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                }}
+              />
+              <Form.Check
+                label="Gainers"
+                name="group1"
+                type={type}
+                id={`reverse-${type}-2`}
+                value="gainers"
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                }}
+              />
+               <Form.Check
+                label="Pre-Post Workout"
+                name="group1"
+                type={type}
+                id={`reverse-${type}-3`}
+                value="prepostworkout"
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                }}
+              />
+               <Form.Check
+                label="Protein Foods"
+                name="group1"
+                type={type}
+                id={`reverse-${type}-4`}
+                value="proteinfoods"
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                }}
+              />
+               <Form.Check
+                label="Weight Management"
+                name="group1"
+                type={type}
+                id={`reverse-${type}-5`}
+                value="weightmanagement"
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                }}
+              />
+               <Form.Check
+                label="Whey Protein Isolate"
+                name="group1"
+                type={type}
+                id={`reverse-${type}-6`}
+                value="WheyProteinIsolate"
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                }}
+              />
+               <Form.Check
+                label="Workout Essential"
+                name="group1"
+                type={type}
+                id={`reverse-${type}-6`}
+                value="workoutessentials"
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                }}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="right_filter_admin">
+          <Row xs={1} md={2} lg={3} className="g-4">
+            {data && loading?[1,2,3,4,5,6,7,8,9].map((el)=>{
+              return(
+              <Card style={{ width: '22rem',height:"600px",display:"flex",justifyContent:"space-evenly",flexDirection:"column" }}>
+            <Card.Img  width="60%" height="60%" variant="top" src="https://www.gqrhealthapp.com/Resources/images/rolling.gif" />
+            <Card.Body>
+              <Placeholder as={Card.Title} animation="glow">
+                <Placeholder xs={3} size="lg" />
+              </Placeholder>
+              <Placeholder as={Card.Title} animation="wave">
+                <Placeholder xs={12} size="lg" /> 
+                <Placeholder xs={12} size="lg" /> 
+              </Placeholder>
+              <Placeholder as={Card.Text} style={{display:"flex",justifyContent:"space-evenly",marginTop:"30px"}} animation="glow">
+            <Placeholder xs={3} /> <Placeholder xs={3} /> <Placeholder xs={3} />{' '}
+          </Placeholder >
+          <div style={{display:"flex",justifyContent:"space-evenly",marginTop:"30px"}}>
+              <Placeholder.Button variant="warning" xs={5} />
+              <Placeholder.Button variant="danger" xs={5} />
+              </div>
+            </Card.Body>
+          </Card>)
+            })       
+            :
+              data.map((el) => (
+                <Col>
+                  <AdminproductCard key={el._id}  el={el} />
+                </Col>
+              ))}
+          </Row>
+        </div>
+      </div>
 
+      <div className="admin_pagination">
+      <Pagination style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
+      <Pagination.First onClick={(e)=>{setPage(1)}}  />
+      <Pagination.Prev onClick={(e)=>{setPage(page==1?page:page-1)}} />
+      <Pagination.Item onClick={(e)=>{setPage(1)}}>{1}</Pagination.Item>
+      <Pagination.Ellipsis />
+      <Pagination.Item onClick={(e)=>{setPage(page==1?page:page-1)}}>{page==1?page:page-1}</Pagination.Item>
+      <Pagination.Item onClick={(e)=>{setPage(page-1)}} active>{page}</Pagination.Item>
+      <Pagination.Item onClick={(e)=>{setPage(page==totalPages?page:page+1)}}>{page==totalPages?page:page+1}</Pagination.Item>
+      <Pagination.Ellipsis />
       
+      <Pagination.Item onClick={(e)=>{setPage(totalPages)}}>{totalPages}</Pagination.Item>
+     
+      <Pagination.Next onClick={(e)=>{setPage(page==totalPages?page:page+1)}} />
+      <Pagination.Last onClick={(e)=>{setPage(totalPages)}} />
+    </Pagination>
+
+      </div>
+      <Footer/>
     </>
   );
 };
