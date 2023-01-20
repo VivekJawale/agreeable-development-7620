@@ -6,7 +6,7 @@ const app = express.Router();
 app.get("", async (req, res) => {
     const {
         page = 1,
-        limit = 24,
+        limit = 20,
         category,
         input,
         priceSort,
@@ -60,7 +60,11 @@ app.get("", async (req, res) => {
             }
         } else if (input && category) {
             let temp = new RegExp(input, "i");
-            let product = Product.find({ name: temp }).limit(limit);
+            let product = await Product.find({ name: temp, category }).limit(limit);
+            return res.status(200).send(product);
+        } else if (input) {
+            let temp = new RegExp(input, "i");
+            let product = await Product.find({ name: temp }).limit(limit);
             return res.status(200).send(product);
         } else if (category) {
             let product = await Product.find({ category })
@@ -88,10 +92,32 @@ app.get("/:id", async (req, res) => {
 });
 
 app.patch("/:id", async (req, res) => {
-    const { user_name, star, title, type } = req.body;
+    const {
+        user_name,
+        star,
+        title,
+        type,
+        image,
+        name,
+        quantity,
+        price1,
+        price2,
+        discount,
+    } = req.body;
     try {
         if (!type) {
-            return res.status(400).send("type is missing");
+            let product = await Product.findByIdAndUpdate(
+                { _id: req.params.id },
+                {
+                    image,
+                    name,
+                    quantity,
+                    price1,
+                    price2,
+                    discount,
+                }
+            );
+            return res.send(product);
         } else if (type === "rating") {
             let product = await Product.findByIdAndUpdate(
                 { _id: req.params.id },
