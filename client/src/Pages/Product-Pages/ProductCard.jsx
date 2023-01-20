@@ -20,27 +20,24 @@ const ProductCard = ({ props }) => {
       <Image w="60%" src={props.image} alt="img" />
       <Box borderTop="1px solid #B8B8B8" textAlign="left" padding="10px">
         <Box display="flex" justifyContent="space-between" alignItems="center" >
-          <Box w="50%" display="flex" justifyContent="space-between" alignItems="center">
+          <Box w="53%" display="flex" justifyContent="space-between" alignItems="center">
             <Box bg="#2eb8b8" p="5px 10px" display="flex" justifyContent="space-between" alignItems="center">
               <Text m="0" color="white" fontSize="15px">{props.star_rating}</Text>
               <Icon m="0" boxSize={14} color="white" as={AiFillStar} />
             </Box>
             <Text fontSize="16px">{props.star_rating} reviews</Text>
           </Box>
-          <Box boxSize="15px" display="flex" fontSize="60px" justifyContent="cneter" alignItems="center" border="2px solid green" color="green">
-            <Text mt="16px">.</Text>
-          </Box>
         </Box>
-        <Text h="40px" overflow="clip" fontFamily="'Trebuchet MS', sans-serif" color="#424040" >{props.name}</Text>
-        <Box w="58%" display="flex" justifyContent="space-between" alignItems="center">
+        <Text h="45px" overflow="clip" fontFamily="'Trebuchet MS', sans-serif" color="#424040" >{props.name}</Text>
+        <Box w="58%" m="5px 0px" display="flex" justifyContent="space-between" alignItems="center">
           <Text mt="0" color="#424040" fontSize="17px" fontWeight="bold">₹ {props.price1}</Text>
           <Text mt="0" color="#424040" fontSize="16px" textDecoration="line-through">₹ {props.price2}</Text>
           <Text mt="0" fontSize="13px" fontWeight="bold" color="green">{props.discount}% off</Text>
         </Box>
         <Box bg="#f1f4f4">
           <Box w="85%" m="auto" p="0" display="flex" justifyContent="space-between" alignItems="center">
-            <Box boxSize="20px" display="flex" justifyContent="center" alignItems="center" border="1px solid #f66809" rounded="50%">
-              <Icon m="0" boxSize={14} color="#f66809" as={AiFillStar} />
+            <Box boxSize="22px" display="flex" justifyContent="center" alignItems="center" border="1px solid #f66809" rounded="50%">
+              <Icon m="0" boxSize={14} color="#f66809" as={AiFillStar}/>
             </Box>
             <Text color="#424040" fontSize="16px">₹ {props.bold ? props.bold : props.price1}</Text>
             <Text color="#424040" fontSize="16px"> for Premium Member</Text>
