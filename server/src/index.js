@@ -5,6 +5,9 @@ const connect = require("./configs/db");
 const PORT = process.env.PORT || 8080;
 const userRoute = require("./features/auth/auth.route");
 const productRoute = require("./features/Product/product.route");
+const cartRoute = require("./src/features/Cart/cart.route");
+
+
 
 const app = express();
 app.use(cors({ origin: "*" }));
@@ -17,6 +20,7 @@ app.get('/', async (req, res) => {
 
 app.use("/user", userRoute);
 app.use("/product", productRoute);
+app.use("/cart", cartRoute);
 
 
 
