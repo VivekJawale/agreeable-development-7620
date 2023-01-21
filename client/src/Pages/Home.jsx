@@ -29,8 +29,6 @@ import ProductCard from './Product-Pages/ProductCard';
 import axios from 'axios';
 
 
-
-
 const Home = () => {
   const responsive = {
     desktop: {
@@ -46,7 +44,6 @@ const Home = () => {
       items: 1
     }
   };
-
 
   
   const [data, setData]= useState([]);
@@ -71,7 +68,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Subnav />
+      <SubNav />
         <Slider/>
           <Carousel
               className='prod-slider'
@@ -99,7 +96,7 @@ const Home = () => {
 
           </Carousel>
 
-        <PageSlider/>
+        <PageSlider />
 
         <Container className='picks-section'>
             <Row>

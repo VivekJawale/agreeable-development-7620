@@ -12,6 +12,11 @@ import {AiTwotoneCrown} from 'react-icons/ai'
 import {FaHeart} from 'react-icons/fa'
 import {BsFillTagsFill} from 'react-icons/bs'
 import {FiLogOut} from 'react-icons/fi'
+import Orders from './accountComps/Orders';
+import PersonalInfo from './accountComps/PersonalInfo';
+import Wishlist from '../Components/accountComps/Wishlist';
+import Subscription from './accountComps/Subscription';
+import SavedCards from './accountComps/SavedCards';
 // import { Link, NavLink } from 'react-router-dom';
 
 const Sidetabs = () => {
@@ -109,10 +114,10 @@ const Sidetabs = () => {
                 <Col sm={9}>
                 <Tab.Content>
                     <Tab.Pane eventKey="myorders">
-                            hare    
+                            <Orders/> 
                     </Tab.Pane>
                     <Tab.Pane eventKey="pinfo">
-                            krishna
+                           <PersonalInfo/>
                     </Tab.Pane>
                     <Tab.Pane eventKey="address">
                             hare    
@@ -120,8 +125,8 @@ const Sidetabs = () => {
                     <Tab.Pane eventKey="hkcash">
                             krishna
                     </Tab.Pane>
-                    <Tab.Pane eventKey="savedcards">
-                            hare    
+                    <Tab.Pane eventKey="savecards">
+                            <SavedCards/>   
                     </Tab.Pane>
                     <Tab.Pane eventKey="referearn">
                             krishna
@@ -130,10 +135,10 @@ const Sidetabs = () => {
                             hare    
                     </Tab.Pane>
                     <Tab.Pane eventKey="wishlist">
-                            krishna
+                            <Wishlist/>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="subscription">
-                            hare    
+                    <Tab.Pane eventKey="subs">
+                            <Subscription/>
                     </Tab.Pane>
                     <Tab.Pane eventKey="logout">
                             krishna

@@ -25,7 +25,7 @@ const ProductCard = ({ props }) => {
       <Image w="60%" src={props.image} alt="img" />
       <Box borderTop="1px solid #B8B8B8" textAlign="left" padding="10px">
         <Box display="flex" justifyContent="space-between" alignItems="center" >
-          <Box w="53%" display="flex" justifyContent="space-between" alignItems="center">
+          <Box w="100%" display="flex" justifyContent="space-between" alignItems="center" mt={2} mb={4}>
             <Box bg="#2eb8b8" p="5px 10px" display="flex" justifyContent="space-between" alignItems="center">
               <Text m="0" color="white" fontSize="15px">{props.star_rating}</Text>
               <Icon m="0" boxSize={4} color="white" as={AiFillStar} />
@@ -33,14 +33,14 @@ const ProductCard = ({ props }) => {
             <Text fontSize="16px">{props.star_rating} reviews</Text>
           </Box>
         </Box>
-        <Text h="45px" overflow="clip" fontFamily="'Trebuchet MS', sans-serif" color="#424040" >{props.name}</Text>
-        <Box w="58%" m="5px 0px" display="flex" justifyContent="space-between" alignItems="center">
+        <Text h="45px" overflow="clip" fontFamily="'Trebuchet MS', sans-serif" color="#424040" mb={5} >{props.name}</Text>
+        <Box w="100%" m="5px 0px" display="flex" justifyContent="space-between" alignItems="center" mb={5}>
           <Text mt="0" color="#424040" fontSize="17px" fontWeight="bold">₹ {props.price1}</Text>
           <Text mt="0" color="#424040" fontSize="16px" textDecoration="line-through">₹ {props.price2}</Text>
           <Text mt="0" fontSize="13px" fontWeight="bold" color="green">{props.discount}% off</Text>
         </Box>
         <Box bg="#f1f4f4">
-          <Box w="85%" m="auto" p="0" display="flex" justifyContent="space-between" alignItems="center">
+          <Box w="100%" m="auto" p="0" display="flex" justifyContent="space-between" alignItems="center" >
             <Box boxSize="22px" display="flex" justifyContent="center" alignItems="center" border="1px solid #f66809" rounded="50%">
               <Icon m="0" boxSize={4} color="#f66809" as={AiFillStar}/>
             </Box>
