@@ -26,7 +26,7 @@ const Navbar = () => {
         <Box w="17%" display="flex" justifyContent="space-between" alignItems="center">
           <Button m="0px" p="11px 25px" rounded="5px" border="none" bg="#2eb8b8" fontSize="18px" color="white">Login</Button>
           <Box display="flex" justifyContent="center" alignItems="center">
-            <Icon m="0px" boxSize="25px" as={FiShoppingCart} />
+          <Link href="/cart"><Icon m="0px" boxSize="25px" as={FiShoppingCart} /></Link>
             <Box w="22px" h="22px" display="flex" justifyContent="center" alignItems="center" bg="#f66809" rounded="50%">
                 <Text m="0px" fontSize="16px" fontWeight="400" color="white">0</Text>
             </Box>

@@ -7,6 +7,11 @@ import { FiShoppingCart } from 'react-icons/fi';
 
 const ProductCard = ({ props }) => {
 
+  
+  const handlecart= ()=>{
+    
+  }
+
 
   return (
     <Box _hover={{ boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px" }}
@@ -43,7 +48,7 @@ const ProductCard = ({ props }) => {
             <Text color="#424040" fontSize="16px"> for Premium Member</Text>
           </Box>
         </Box>
-        <Button _hover={{ bg: "#f66809", color: "white" }} mt="15px" fontWeight="bold" bg="white" w="100%" fontSize="16px"
+        <Button onClick={handlecart} _hover={{ bg: "#f66809", color: "white" }} mt="15px" fontWeight="bold" bg="white" w="100%" fontSize="16px"
           rounded="8px" p="13px 0px" leftIcon={<FiShoppingCart />} color="#f66809" border="1px solid #f66809">Add to Cart</Button>
       </Box>
     </Box>
