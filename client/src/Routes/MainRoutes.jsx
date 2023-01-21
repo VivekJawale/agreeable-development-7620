@@ -7,7 +7,7 @@ import Protiens from '../Pages/Product-Pages/Protiens';
 import Wishlist from '../Pages/Wishlist';
 import SingleProduct from "../Pages/SingleProduct";
 import MyAccount from '../Pages/MyAccount';
-// import Home from '../Pages/Home'
+import MainScreen from '../Pages/PaymentPage/MainScreen';
 const MainRoutes = () => {
   return (
     <div>
@@ -19,6 +19,7 @@ const MainRoutes = () => {
         <Route path='/wishlist' element={<Wishlist />}></Route>
         <Route path='/cart' element={<Cart />}></Route>
         <Route path='/account' element={<MyAccount />}></Route>
+        <Route path='/card' element={<MainScreen />}></Route>
       </Routes>
     </div>
   )
