@@ -4,16 +4,19 @@ import Styles from "./Summery.module.css";
 import { CiLocationOn } from "react-icons/ci";
 import { TbDiscount2 } from "react-icons/tb";
 import { BiChevronRight } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import OrderSummery from "./OrderSummery";
 import { useDispatch } from "react-redux";
 import { handleAddCart } from "../../Redux/Cart/cart.action";
+import Address from "../addressPage/Address";
 
 export default function Summery() {
   const dispatch = useDispatch();
-
+const navigate= useNavigate();
   const proceedToPay = () => {
     dispatch(handleAddCart())
+    // navigate("/address")
+    // return <Address/>
   }
   return (
     <VStack className={Styles.main} spacing={3}>

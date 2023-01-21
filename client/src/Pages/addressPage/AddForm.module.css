@@ -1,0 +1,26 @@
+.addform{
+    width: 50%;
+    border: 1px solid black;
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 2vh 3vh;
+}
+.main4{
+    width: 30%;
+    /* border: 1px solid black; */
+    /* padding: 0 10px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.main4>p{
+    font-weight: 500;
+    
+}
+.main4>div>button{
+    height: 33px;
+}
+
