@@ -1,5 +1,5 @@
 import React from 'react'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 // import data from '../assets/data';
 import Carousel from "react-multi-carousel";
 import Slider from '../Components/Slider'
