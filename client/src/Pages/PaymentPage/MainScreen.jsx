@@ -56,7 +56,7 @@ const MainScreen = () => {
 
     return (
         <div className="wrapper">
-            <CForm
+            <CForm 
                 cardMonth={state.cardMonth}
                 cardYear={state.cardYear}
                 onUpdateState={updateStateValues}
@@ -78,8 +78,8 @@ const MainScreen = () => {
                     cardNumberRef={cardElementsRef.cardNumber}
                     cardHolderRef={cardElementsRef.cardHolder}
                     cardDateRef={cardElementsRef.cardDate}
-                ></Card>
-            </CForm>
+                    ></Card>
+                    </CForm>
         </div>
     );
 };

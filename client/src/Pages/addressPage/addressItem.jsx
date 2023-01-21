@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, HStack, Text } from "@chakra-ui/react";
 import React from "react";
 import Styles from "./addressItem.module.css";
 import { FaUserCircle } from "react-icons/fa";
@@ -6,10 +6,12 @@ import { MdOutlineLockOpen, MdOutlineMailOutline } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
 import AddAddress from "./addAddress";
 import { useState } from "react";
+import AddModal from "./addModal";
 
 
 export default function AddressItem() {
   const [select, setselect] = useState({ one: true, two: false })
+  const [modalShow, setModalShow] = React.useState(false);
 
   const onChecked1 = () => {
     setselect({ one: true, two: false });
@@ -44,11 +46,15 @@ export default function AddressItem() {
       <Box className={Styles.main3}>
         <HStack>
           <Text as="p">Delivery Address</Text>
-          <Text as="p">+ Add Address</Text>
+          <Text as="p" onClick={() => setModalShow(true)} cursor="pointer">+ Add Address</Text>
+          <AddModal
+        show={modalShow}
+        onHide={(e) => setModalShow(e)}
+      />
         </HStack>
         <HStack className={Styles.address}>
-          <AddAddress check={select.one} onClick={ onChecked1} />
-          <AddAddress check={select.two} onClick={onChecked2} />
+          <AddAddress check={select.one} onClick={ onChecked1} editForm={() => setModalShow(true)}/>
+          <AddAddress check={select.two} onClick={onChecked2} editForm={() => setModalShow(true)}/>
         </HStack>
       </Box>
       <Box className={Styles.main4}>

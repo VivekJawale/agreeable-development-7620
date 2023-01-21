@@ -1,12 +1,15 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
 import { shallowEqual, useSelector } from 'react-redux'
-import CartFooter from '../CartPage/CartFooter'
-import CartNavbar from '../CartPage/CartPageNav'
-import OrderSummery from '../CartPage/OrderSummery'
+// import CartFooter from '../CartPage/CartFooter'
+// import CartNavbar from '../CartPage/CartPageNav'
+// import OrderSummery from '../CartPage/OrderSummery'
 import AddressItem from './addressItem'
 import {useNavigate} from "react-router-dom"
+// import Cart from '../Cart'
+import OrderSummery from '../CartPage/OrderSummery'
 import Cart from '../Cart'
+// import Cart from '../CartPage/Cart'
 
 
 export default function Address() {

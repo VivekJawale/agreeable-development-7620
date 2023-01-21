@@ -1,4 +1,5 @@
 import React, {useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const currentYear = new Date().getFullYear();
 const monthsArr = Array.from({ length: 12 }, (x, i) => {
@@ -20,6 +21,11 @@ export default function CForm({
     children
 }) {
     const [cardNumber, setCardNumber] = useState('');
+    const navigate = useNavigate();
+    const OrderConfirm = () => {
+        alert("Order confirmed successfully");
+        navigate("www.google.com")
+    }
 
     const handleFormChange = (event) => {
         const { name, value } = event.target;
@@ -60,6 +66,7 @@ export default function CForm({
     const onCvvBlur = (event) => {
         onUpdateState('isCardFlipped', false);
     };
+
 
     return (
         <div className="card-form">
@@ -169,7 +176,7 @@ export default function CForm({
                         </div>
                     </div>
                 </div>
-            <button style={{width:"100%", backgroundColor:"rgb(0,181,181)", color:"white", padding:"5px", marginTop:"5px", borderRadius:"10px"}}>Payment</button>
+            <button style={{width:"100%", backgroundColor:"rgb(0,181,181)", color:"white", padding:"5px", marginTop:"5px", borderRadius:"10px"}} onClick={OrderConfirm}>Payment</button>
             </div>
         </div>
     );
