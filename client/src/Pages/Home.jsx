@@ -71,7 +71,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Subnav />
+      <SubNav />
         <Slider/>
           <Carousel
               className='prod-slider'
