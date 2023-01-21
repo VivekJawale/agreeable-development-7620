@@ -11,10 +11,12 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
+import Button from "react-bootstrap/esm/Button";
 import axios from "axios";
 import Pagination from 'react-bootstrap/Pagination';
 import Placeholder from 'react-bootstrap/Placeholder';
 import Footer from "../Footer";
+import AddNewProduct from "./admincomponents/AddNewProduct";
 
 
 const Admin = () => {
@@ -148,10 +150,16 @@ const Admin = () => {
           <p>Look for product you want to change and change it.</p>
         </div>
       </div>
+     
      {filterTerm==""?
-     <div style={{width:"20%",height:"100px"}}></div>
-     :<div style={{width:"20%",height:"100px",marginLeft:"70%"}}>
-     <Form.Select value={sort} onChange={(e)=>{setSort(e.target.value)}} aria-label="Default select example">
+     <div style={{width:"20%",height:"100px",marginLeft:"80%",display:"flex"}}>
+       <Button style={{width:"200px",border:"none",height:"40px",background:"#0dccc5"}} onClick={() => setModalShow(true)} >Add New Product</Button>
+      <AddNewProduct show={modalShow} onHide={() => setModalShow(false)}/>
+     </div>
+     :<div style={{width:"30%",height:"100px",marginLeft:"65%",display:"flex",justifyContent:"space-evenly"}}>
+       <Button style={{width:"200px",border:"none",height:"40px",background:"#0dccc5"}} onClick={() => setModalShow(true)} >Add New Product</Button>
+      <AddNewProduct show={modalShow} onHide={() => setModalShow(false)}/>
+     <Form.Select style={{width:"200px",border:"0.5 px #0dccc5",height:"40px"}} value={sort} onChange={(e)=>{setSort(e.target.value)}} aria-label="Default select example">
       <option>Sort By</option>
       <option value="asc">Low to High</option>
       <option value="desc">High to Low</option>
