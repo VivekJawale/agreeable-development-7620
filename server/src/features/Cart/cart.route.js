@@ -3,7 +3,7 @@ const Cart = require("./cart.model");
 const User = require("../auth/auth.model");
 const Product = require("../Product/product.model");
 const jwt = require("jsonwebtoken");
-const SECRET_KEY = "17147714";
+const SECRET_KEY = process.env.SECRET_KEY
 
 const app = express.Router();
 

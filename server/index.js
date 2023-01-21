@@ -1,10 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const connect = require("./configs/db");
+const connect = require("./src/configs/db");
 const PORT = process.env.PORT || 8080;
-const userRoute = require("./features/auth/auth.route");
-const productRoute = require("./features/Product/product.route");
+const userRoute = require("./src/features/auth/auth.route");
+const productRoute = require("./src/features/Product/product.route");
 const cartRoute = require("./src/features/Cart/cart.route");
 
 
