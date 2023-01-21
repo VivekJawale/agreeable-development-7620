@@ -1,4 +1,3 @@
-
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Card from 'react-bootstrap/Card';
@@ -6,63 +5,51 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import React, { useEffect } from 'react'
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
-import swal from "sweetalert";
+import swal from 'sweetalert';
 
-const AdminProductEdit=(props)=>{
-  const {el}=props;
+const AddNewProduct=(props)=>{
+//   const {el}=props;
   // console.log(el);
   // console.log(el)
-  const [category,setnewCategory]=useState(`${el.category}`);
-  const [image_url,setImageUrl]=useState(el.image);
-  const [name,setName]=useState(el.name);
-  const [discountPrice,setDiscountprice]=useState(el.price1);
-  const [ogprice,setogprice]=useState(el.price2);
-  const [bold,setBold]=useState(el.bold);
-  const [offer,setOffer]=useState(el.discount);
-  const [boldavail,notbold]=React.useState();
+  const [category,setnewCategory]=useState("Whey");
+  const [image_url,setImageUrl]=useState("");
+  const [name,setName]=useState("");
+  const [discountPrice,setDiscountprice]=useState("");
+  const [ogprice,setogprice]=useState("");
+//   const [bold,setBold]=useState(el.bold);
+  const [offer,setOffer]=useState("");
+//   const [boldavail,notbold]=React.useState();
 
-  const handlechanges=()=>{
+  const handlechanges=({props})=>{
     let data_to_change={
              
     }
     if(image_url==""||name==""||discountPrice==""||ogprice==""||offer==""){
-      return swal({
-          title:"All fields needs to be filled!",
-          icon:"warning",
-      })
-  }
-  
+        return swal({
+            title:"All fields needs to be filled!",
+            icon:"warning",
+        })
+    }
+
     swal({
-      title: "Are you sure?",
-      text: "You want to update details! changes are irreversible!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        swal("Poof! Your!", {
-          icon: "success",
-        });
+        title: "Are you sure?",
+        text: "Please check details before you add product!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Product has been added to Database", {
+            icon: "success",
+          });
+         
 
-      } else {
-        
-      }
-    });
+        } else {
+          
+        }
+      });
   }
-
-
-
-  useEffect(()=>{
-      if(el.bold){
-          notbold(true)
-      }
-      else{
-          notbold(false)
-      }
-
-     
-  },[])
 
   return (
     <Modal
@@ -73,7 +60,7 @@ const AdminProductEdit=(props)=>{
     >
       <Modal.Header closeButton>
         <Modal.Title style={{borderBottom:"none",fontFamily: "Trebuchet MS',sans-serif",color: "#424040"}} id="contained-modal-title-vcenter">
-      <span style={{marginRight:"20px"}}></span> Change whatever you want to change and click on change details!
+      <span style={{marginRight:"20px"}}></span>Add New Product to Database
         </Modal.Title>
       </Modal.Header>
       <Modal.Body style={{display:"flex",justifyContent:"center"}}>
@@ -85,17 +72,17 @@ const AdminProductEdit=(props)=>{
       <Card.Body >
         <p>ADD NEW IMAGE URL.</p>
         <input type="text" style={{width:"100%",overflow:"scroll",background:"#eee",padding:"5px 5px"}} contentEditable="true" placeholder={image_url} value={image_url} onChange={(e)=>{setImageUrl(e.target.value)}} />  
-        <p style={{marginTop:"5px"}}> <span style={{fontWeight:"bold"}}>Current URL:-</span> {image_url}</p>
+        <p style={{marginTop:"5px"}}> <span style={{fontWeight:"bold"}}>Preview of entered URL:-</span> {image_url}</p>
       </Card.Body>
       <Card.Body >
-        <p>EDIT PRODUCT NAME</p>
+        <p>ADD PRODUCT NAME</p>
         <input type="text" style={{width:"100%",overflowX:"scroll",background:"#eee",padding:"5px 5px"}} contentEditable="true" placeholder={name} value={name} onChange={(e)=>{setName(e.target.value)}} />  
-        <p style={{marginTop:"5px"}}> <span style={{fontWeight:"bold"}}>Current Name:-</span> {name}</p>
+        <p style={{marginTop:"5px"}}> <span style={{fontWeight:"bold"}}>Preview of entered Name:-</span> {name}</p>
        </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item style={{display:"flex"}}>
         <div style={{background:"#2eb8b8",width:"60px",display:"flex",alignItems:"center",justifyContent:"space-evenly",padding:"3px"}}>
-        <p style={{fontSize:"15px",color:"white"}}>{el.star_rating==undefined?"N.A":el.star_rating}</p>
+        <p style={{fontSize:"15px",color:"white"}}>N.A</p>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
         </div>
         </ListGroup.Item>
@@ -103,23 +90,23 @@ const AdminProductEdit=(props)=>{
           <div style={{display:"flex",marginTop:"10px"}}>
           <span style={{padding:"5px 5px"}} contentEditable="false">₹</span> 
           <input type="text" style={{width:"20%",overflowX:"scroll",background:"#eee",padding:"5px 5px"}} contentEditable="true" placeholder={discountPrice} value={discountPrice} onChange={(e)=>{setDiscountprice(e.target.value)}} />  
-     <span style={{padding:"5px 5px"}} contentEditable="false">Discounted Price.</span>
+     <span style={{padding:"5px 5px"}} contentEditable="false">Add Discounted Price.</span>
           </div>
         
           <div style={{display:"flex",marginTop:"10px"}}>
           <span style={{padding:"5px 5px"}} contentEditable="false">₹</span> 
-          <input type="text" style={{width:"20%",overflowX:"scroll",background:"#eee",padding:"5px 5px"}} contentEditable="true" placeholder={ogprice} value={ogprice} onChange={(e)=>{setogprice(e.target.value)}} />  <span style={{padding:"5px 5px"}} contentEditable="false">Original Price.</span>
+          <input type="text" style={{width:"20%",overflowX:"scroll",background:"#eee",padding:"5px 5px"}} contentEditable="true" placeholder={ogprice} value={ogprice} onChange={(e)=>{setogprice(e.target.value)}} />  <span style={{padding:"5px 5px"}} contentEditable="false">Add original Price.</span>
           </div>
           
          
 
           <div style={{display:"flex",marginTop:"10px"}}>
-          <input type="text" style={{width:"20%",overflowX:"scroll",background:"#eee",padding:"5px 5px"}} contentEditable="true" placeholder={offer} value={offer} onChange={(e)=>{setOffer(e.target.value)}} />  <span style={{padding:"5px 5px"}} contentEditable="false">% off</span>
+          <input type="text" style={{width:"20%",overflowX:"scroll",background:"#eee",padding:"5px 5px"}} contentEditable="true" placeholder={offer} value={offer} onChange={(e)=>{setOffer(e.target.value)}} />  <span style={{padding:"5px 5px"}} contentEditable="false">Add discount in % off </span>
           </div>
         </ListGroup.Item>
         <ListGroup.Item>
         <div style={{display:"flex"}}>
-          <p style={{fontWeight:"bold"}}>Current Category :- <span style={{marginRight:"20px",fontWeight:"normal"}} >
+          <p style={{fontWeight:"bold"}}>Select Category :- <span style={{marginRight:"20px",fontWeight:"normal"}} >
              {category} 
           </span>   </p>
           </div>
@@ -138,13 +125,13 @@ const AdminProductEdit=(props)=>{
     </Card>
       </Modal.Body>
       <Modal.Footer>
-      <Button variant='danger'>Change details</Button>
+      <Button variant='danger' onClick={handlechanges}>Add New</Button>
         <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );
 }
 
-export default AdminProductEdit;
+export default AddNewProduct;
 
 
