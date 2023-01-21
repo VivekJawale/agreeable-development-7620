@@ -335,10 +335,17 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0dccc5",endCo
     background-color: #b2b2b2;
     cursor: pointer;
   }
+  .add_new_priduct_flex{
+    margin-left: 65%;
+   }
 
   @media only screen and (max-width: 500px) {
      .bubbles{
 display: none;
+     }
+     .add_new_priduct_flex{
+      flex-direction: column;
+      margin-left: 40%;
      }
      .all_products_main{
       display: flex;
@@ -398,6 +405,10 @@ display: none;
       flex-direction: column;
       margin: auto;
     }
+    .add_new_priduct_flex{
+      flex-direction: column;
+      margin-left: 40%;
+     }
     .left_filter_admin{
       width: 90%;
       height: 500px;

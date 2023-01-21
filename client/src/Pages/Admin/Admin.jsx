@@ -17,9 +17,10 @@ import Pagination from 'react-bootstrap/Pagination';
 import Placeholder from 'react-bootstrap/Placeholder';
 import Footer from "../Footer";
 import AddNewProduct from "./admincomponents/AddNewProduct";
-
+// const url=process.env.ApiUrl
 
 const Admin = () => {
+ 
   const [modalShow, setModalShow] = React.useState(false);
   const [data, setdata] = useState([]);
   const [filterTerm, setFilter] = useState("");
@@ -37,11 +38,10 @@ const Admin = () => {
       setLoading(true);
     
       axios
-        .get(`https://kind-cyan-piglet-coat.cyclic.app/product?page=${page}`)
+        .get(`https://lime-fawn-veil.cyclic.app/product?limit=24&page=${page}`)
         .then((res) => {
           // console.log(res);
           setLoading(false);
-         
             setdata(res.data);
 
          
@@ -55,6 +55,7 @@ const Admin = () => {
       setLoading(true);
       if(filterTerm=="whey"){
         SetTotalPages(2);
+        // setPage(1)
       }
       else if(filterTerm=="prepostworkout"){
         SetTotalPages(7);
@@ -76,7 +77,7 @@ const Admin = () => {
       }
       axios
         .get(
-          `https://kind-cyan-piglet-coat.cyclic.app/product?category=${filterTerm}&page=${page}&priceSort=${sort}`
+          `https://lime-fawn-veil.cyclic.app/product?limit=24&category=${filterTerm}&page=${page}&priceSort=${sort}`
         )
         .then((res) => {
           if(res.data==[] || res.data==undefined){
@@ -153,11 +154,11 @@ const Admin = () => {
      
      {filterTerm==""?
      <div style={{width:"20%",height:"100px",marginLeft:"80%",display:"flex"}}>
-       <Button style={{width:"200px",border:"none",height:"40px",background:"#0dccc5"}} onClick={() => setModalShow(true)} >Add New Product</Button>
+       <Button style={{width:"200px",border:"none",height:"40px",background:"#0dccc5"}} onClick={() => setModalShow(true)} >Add New</Button>
       <AddNewProduct show={modalShow} onHide={() => setModalShow(false)}/>
      </div>
-     :<div style={{width:"30%",height:"100px",marginLeft:"65%",display:"flex",justifyContent:"space-evenly"}}>
-       <Button style={{width:"200px",border:"none",height:"40px",background:"#0dccc5"}} onClick={() => setModalShow(true)} >Add New Product</Button>
+     :<div style={{width:"30%",height:"100px",display:"flex",justifyContent:"space-evenly"}} className="add_new_priduct_flex">
+       <Button style={{width:"200px",border:"none",height:"40px",background:"#0dccc5"}} onClick={() => setModalShow(true)} >Add New</Button>
       <AddNewProduct show={modalShow} onHide={() => setModalShow(false)}/>
      <Form.Select style={{width:"200px",border:"0.5 px #0dccc5",height:"40px"}} value={sort} onChange={(e)=>{setSort(e.target.value)}} aria-label="Default select example">
       <option>Sort By</option>
@@ -169,7 +170,7 @@ const Admin = () => {
       <div className="all_products_main">
         <div className="left_filter_admin">
           <div>
-           {filterTerm==""?<p>You can filter by category</p>:<p>Filtered by : {filterTerm} <span onClick={()=>{setFilter("")}} style={{color:"0dccc5",marginLeft:"30px"}}>Reset</span> </p>}
+           {filterTerm==""?<p>You can filter by category</p>:<p>Filtered by : {filterTerm} <span onClick={()=>{setFilter("");SetTotalPages(41)}} style={{color:"0dccc5",marginLeft:"30px"}}>Reset</span> </p>}
           </div>
           <div>
             <h3 style={{fontWeight:"bold",fontSize:"18px",marginTop:"10px",marginBottom:"5px"}}>Categories</h3>
