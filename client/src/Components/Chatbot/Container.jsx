@@ -14,8 +14,8 @@ const Container = () => {
     headerFontColor: "#fff",
     headerFontSize:"13px",
     botFontColor: "#000",
-    userBubbleColor: "#fff",
-    userFontColor: "#0DCCC5",
+    userBubbleColor: "#0DCCC5",
+    userFontColor: "#fff",
   };
   const config = {
     botAvatar:
@@ -27,8 +27,8 @@ const Container = () => {
   return (
     <ThemeProvider theme={theme}>
       <ChatBot
-        headerTitle="HealthKart is Online! Chat with us!" 
-        speechSynthesis={{ enable: true, lang: "en" }}
+        headerTitle="HealthMart is Online! Chat with us!" 
+        // speechSynthesis={{ enable: true, lang: "en" }}
         steps={steps}
         {...config}
       />

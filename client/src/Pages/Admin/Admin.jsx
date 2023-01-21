@@ -17,6 +17,7 @@ import Pagination from 'react-bootstrap/Pagination';
 import Placeholder from 'react-bootstrap/Placeholder';
 import Footer from "../Footer";
 import AddNewProduct from "./admincomponents/AddNewProduct";
+import Navbar from "../Navbar";
 // const url=process.env.ApiUrl
 
 const Admin = () => {
@@ -98,6 +99,7 @@ const Admin = () => {
 
   return (
     <>
+    <Navbar/>
       <div className="welcome_admin">
         <div className="bubbles">
           <div className="bubble"></div>
