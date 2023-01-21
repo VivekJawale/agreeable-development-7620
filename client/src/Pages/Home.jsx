@@ -70,6 +70,8 @@ const Home = () => {
   console.log(data)
   return (
     <div>
+      <Navbar />
+      <Subnav />
         <Slider/>
           <Carousel
               className='prod-slider'
