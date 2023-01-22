@@ -13,9 +13,10 @@ import Cart from '../Cart'
 
 
 export default function Address() {
-  const { onCart, onAdd } = useSelector((b) => { return { onCart: b.cartReducer.onCart, onAdd: b.cartReducer.onAdd } }, shallowEqual);
   const navigate = useNavigate();
-  if (!onCart) {
+  const cartData = useSelector((store) => store.ProductReducer.CartData);
+
+  if (cartData) {
     // navigate("/cart")
     return <Cart/>
   }

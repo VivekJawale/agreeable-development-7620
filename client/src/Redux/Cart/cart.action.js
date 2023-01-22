@@ -1,10 +1,23 @@
-import { AddAddress, AddCart } from "./cart.types"
+import * as types from './cart.types'
+import axios from 'axios'
 
-const handleAddCart = () => {
-    return { type: AddCart }
-}
-const handleAddAddress = () => {
-    return { type: AddAddress }
+
+export const addtocart = (data) => {
+    return {
+        type: types.ADD_CART_ITEMS,
+        payload:data
+    }
 }
 
-export { handleAddAddress, handleAddCart }
+export const checkoutclear = (data) => {
+    return {
+        type: types.CLEAR_CART_CHECKOUT,
+        payload:data
+    }
+}
+
+export const removefromcart = () => {
+    return {
+        type: types.REMOVE_ITEM_FROM_CART
+    }
+}

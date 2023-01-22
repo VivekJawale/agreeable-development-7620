@@ -4,13 +4,16 @@ import Address from './addressPage/Address';
 import CartFooter from './CartPage/CartFooter'
 import CartNavbar from './CartPage/CartPageNav'
 import PageCart from './CartPage/PageCart'
+import store from '../Redux/store';
 
 export default function Cart() {
-  const { onCart, onAdd } = useSelector((b) => { return { onCart: b.cartReducer.onCart, onAdd: b.cartReducer.onAdd } }, shallowEqual);
+
+  const cartData = useSelector((store) => store.ProductReducer.CartData);
+
   return (
     <div>
       <CartNavbar />
-      {onCart ? <Address/>:<PageCart />}
+      {cartData ? <Address/>:<PageCart />}
           {/* <PageCart/> */}
           <CartFooter/>
     </div>

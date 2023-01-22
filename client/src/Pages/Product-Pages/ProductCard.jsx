@@ -3,13 +3,37 @@ import { Box, Button, Icon, Image, Text } from '@chakra-ui/react'
 import { BiHeart } from 'react-icons/bi';
 import { AiFillStar } from 'react-icons/ai';
 import { FiShoppingCart } from 'react-icons/fi';
+import { addtocart } from '../../Redux/Cart/cart.action';
+import swal from 'sweetalert';
+import { useDispatch, useSelector } from 'react-redux';
+import { store } from '../../Redux/store';
 
 
 const ProductCard = ({ props }) => {
+  const dispatch=useDispatch();
+  const cartData = useSelector((store) => store.CartReducer);
 
-  
-  const handlecart= ()=>{
-    alert("Product Added Successfully to the Cart.");
+  console.log(cartData);
+  const handlecart= (data)=>{
+    let newcart2=cartData.filter((el)=>{
+      return el._id===data._id
+     })
+     if(newcart2.length>0){
+      swal({
+        title:"Item already available in cart",
+        text:"It seems item is already present in your cart",
+        icon:"warning"
+      })
+     }
+     else{
+      let newcart=[...cartData,data]
+      dispatch(addtocart(newcart));
+      swal({
+        title:"Added to cart successfully!",
+        text:"You can checkout after login!",
+        icon:"success"
+      })
+     }
   }
 
 
@@ -48,7 +72,7 @@ const ProductCard = ({ props }) => {
             <Text color="#424040" fontSize="14px"> for Premium Member</Text>
           </Box>
         </Box>
-        <Button onClick={handlecart} _hover={{ bg: "#f66809", color: "white" }} mt="15px" fontWeight="bold" bg="white" w="100%" fontSize="16px"
+        <Button onClick={()=>{handlecart(props)}}  _hover={{ bg: "#f66809", color: "white" }} mt="15px" fontWeight="bold" bg="white" w="100%" fontSize="16px"
           rounded="8px" p="13px 0px" leftIcon={<FiShoppingCart />} color="#f66809" border="1px solid #f66809">Add to Cart</Button>
       </Box>
     </Box>

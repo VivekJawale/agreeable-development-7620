@@ -4,7 +4,6 @@ import { VscCircleFilled } from "react-icons/vsc";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Box, Button, HStack, Text } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
-import { handleAddAddress } from '../../Redux/Cart/cart.action';
 
 
 export default function AddAddress({check, onClick, editForm}) {
@@ -31,7 +30,7 @@ export default function AddAddress({check, onClick, editForm}) {
                 <RiDeleteBin5Line />
               </HStack>
             </HStack>
-            <Button colorScheme={check ? "rgb(0, 181,181)": " "} bg={check ? "rgb(0,181,181)": "gray"} onClick={check ? ()=>dispatch(handleAddAddress()):""} disabled={check ? false:true}>Deliver Here</Button>
+            <Button colorScheme={check ? "rgb(0, 181,181)": " "} bg={check ? "rgb(0,181,181)": "gray"} onClick={check ? "":""} disabled={check ? false:true}>Deliver Here</Button>
           </Box>
   )
 }
