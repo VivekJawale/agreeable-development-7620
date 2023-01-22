@@ -1,4 +1,4 @@
-import { Box, Button, Select, Text } from '@chakra-ui/react'
+import { Box, Button, Image, Select, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import ProductCard from './ProductCard'
@@ -19,7 +19,7 @@ const SearchPage = () => {
 
   const [sort, setSortBy]= useState( initialSort || '');
 
-  const [search, setsearch]= useState("");
+  const [search, setsearch]= useState(location.pathname.split("/")[3].split(":")[1]);
 
   const handleSort= (e)=>{
     setSortBy(e.target.value);
@@ -70,7 +70,7 @@ const getData= (params)=>{
       <Box pt={["90px", "90px", "70px"]}>
         <SubNav />
     <Box>
-      <Box w="80%" m="15px auto" justifyContent="right" display="flex" alignItems="center">
+      {data.length>0 && <Box w="80%" m="15px auto" justifyContent="right" display="flex" alignItems="center">
         <Box w={["65%", "40%", "30%"]} border="1px solid gray" rounded="10px" p={["3px 6px", "4px 8px", "5px 10px"]} justifyContent="flex-start" display="flex" alignItems="center">
           <Text w="35%" m="0" fontSize={["13px", "14px", "16px"]}>Sort By: </Text>
           <Select border="none" outline="2px solid white" p="0px" fontSize={["13px", "14px", "16px"]} bg="white" color="black" onChange={handleSort}>
@@ -79,7 +79,7 @@ const getData= (params)=>{
               <option p={["0px", "5px", "10px"]} value="desc" name="sortBy">Price: High to Low</option>
           </Select>
         </Box>
-      </Box>
+      </Box>}
       <Box w="80%" m="auto" display="grid" gap="20px" gridTemplateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]} >
         {data && data.map((el)=>{
             return <ProductCard key={el.id} props={el} />
@@ -93,6 +93,7 @@ const getData= (params)=>{
       <Button border="1px solid black" rounded="5px" fontWeight="bold" fontSize="16px" p="15px 15px" disabled={page === 23} onClick={() => handlePageChange(1)}>NEXT</Button>
       </Box> */}
     </Box>
+    {data.length===0 && <Image w="80%" h="475px" m="auto" src="https://ghrce.raisoni.net/assets/images/gif/404.gif" />}
     </Box>
     </Box>
   )
