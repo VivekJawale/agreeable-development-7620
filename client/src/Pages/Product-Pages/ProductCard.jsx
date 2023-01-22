@@ -9,7 +9,7 @@ const ProductCard = ({ props }) => {
 
   
   const handlecart= ()=>{
-    
+    alert("Product Added Successfully to the Cart.");
   }
 
 
