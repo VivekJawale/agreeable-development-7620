@@ -264,15 +264,15 @@ const Navbar = () => {
                     <Icon m="0px" _hover={{color:"#29a3a3"}} as={prepostShow? MinusIcon : AddIcon} />
                   </Box>
                   <Box fontSize="17px" display={prepostShow? ["inline", "inline", "none"] : "none"}>
-                    <Link  _hover={{color:"#29a3a3"}}>Pre-Workout</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Creatine</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>BCAAs</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Carb Blends</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Electrolytes</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>EAA</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Nitric Oxide</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Other Supports</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Citrulline Malate</Link><br/>
+                    <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Pre-Workout</Link><br/>
+                    <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Creatine</Link><br/>
+                    <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>BCAAs</Link><br/>
+                    <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Carb Blends</Link><br/>
+                    <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Electrolytes</Link><br/>
+                    <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>EAA</Link><br/>
+                    <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Nitric Oxide</Link><br/>
+                    <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Other Supports</Link><br/>
+                    <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Citrulline Malate</Link><br/>
                   </Box>
                 </Box>
                 <Box w="90%" m="0px" pt="3px">
