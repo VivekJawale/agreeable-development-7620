@@ -12,6 +12,7 @@ import Gainer from '../Pages/Product-Pages/Gainer';
 import ProtienFoods from '../Pages/Product-Pages/ProtienFoods';
 import PrePost from '../Pages/Product-Pages/PrePost';
 import WorkoutEssential from '../Pages/Product-Pages/WorkoutEssential';
+import SearchPage from '../Pages/Product-Pages/SearchPage';
 const MainRoutes = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const MainRoutes = () => {
         <Route path='/products/protienfoods' element={<ProtienFoods />}></Route>
         <Route path='/products/prepostworkout' element={<PrePost />}></Route>
         <Route path='/products/workoutessential' element={<WorkoutEssential />}></Route>
+        <Route path='/products/search/:search' element={<SearchPage />}></Route>
         <Route path='/products/:id' element={<SingleProduct />}></Route>
         <Route path='/wishlist' element={<Wishlist />}></Route>
         <Route path='/cart' element={<Cart />}></Route>

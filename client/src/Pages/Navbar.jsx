@@ -10,6 +10,7 @@ import { BsFillChatDotsFill } from 'react-icons/bs';
 import { RiBankFill, RiCouponFill } from 'react-icons/ri';
 import { CgProfile } from 'react-icons/cg';
 import { GiCardboardBoxClosed } from 'react-icons/gi';
+import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -45,6 +46,16 @@ const Navbar = () => {
     setallcategories(false);
   }
 
+
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+    if (e.code === "Enter") {
+      navigate(`/products/search/:${search}`);
+    }
+  };
+
   return (
     <Box bg="white" zIndex={9999} w="100%" position="fixed" p="10px 0px" boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px" >
       <Box display="flex" w={["100%", "95%", "85%"]} m="auto" justifyContent="space-between" alignItems="center">
@@ -61,18 +72,18 @@ const Navbar = () => {
               color='#999999'
               children={<Search2Icon />}
             />
-            <Input h={["14px", "19px", "24px"]} m="0px" bg="none" w="100%" border="none" p={["4px", "7px", "13px"]} outline="0px solid black" type='tel' fontSize={["12px", "14px", "17px"]} placeholder='Search for Products....' />
+            <Input onKeyUp={(e)=>handleSearch(e)} h={["14px", "19px", "24px"]} m="0px" bg="none" w="100%" border="none" p={["4px", "7px", "13px"]} outline="0px solid black" type='tel' fontSize={["12px", "14px", "17px"]} placeholder='Search for Products....' />
           </InputGroup>
         </Box>
         <Box w="17%" display="flex" justifyContent="space-between" alignItems="center">
-          <Button display={["none", "none", "flex"]} m="0px" p="11px 25px" rounded="5px" border="none" bg="#2eb8b8" fontSize="18px" color="white">Login</Button>
-          {loggedin && <Box h="25px">
+        {loggedin===false ? <Button display={["none", "none", "flex"]} m="0px" p="11px 25px" rounded="5px" border="none" bg="#2eb8b8" fontSize="18px" color="white">Login</Button>
+           : <Box h="25px">
             <Box position="relative" display={["none", "none", "flex"]} onClick={()=>setuserShow(!userShow)} justifyContent="space-between" alignItems="center">
               <Icon color="#595959" boxSize="28px" as={CgProfile} />
               <Icon color="#595959" boxSize="30px" as={ userShow? ChevronUpIcon : ChevronDownIcon} />
             </Box>
             <Box display={userShow? ["none", "none", "inline"] : "none"} bg="white" position="absolute" w="250px" ml="-8%" mt="5px" rounded="10px">
-              <Box w="100%" bg="#00cccc" p="20px 5px" roundedTop="10px" color="white" display="flex" justifyContent="space-around" alignItems="center">
+              <Box onClick={()=>navigate("/")} w="100%" bg="#00cccc" p="20px 5px" roundedTop="10px" color="white" display="flex" justifyContent="space-around" alignItems="center">
                 <Icon color="white" boxSize="25px" as={CgProfile} />
                 <Text fontSize="18px">Hi, Name</Text>
                 <Icon color="white" boxSize="25px" as={ChevronRightIcon} />
@@ -95,7 +106,7 @@ const Navbar = () => {
           </Box>}
           <Box display="flex" justifyContent="center" alignItems="center">
           <Link display={["flex", "flex", "flex"]} href="/cart"><Icon m="0px" boxSize="25px" as={FiShoppingCart} /></Link>
-            <Box w="22px" h="22px" display={["none", "none", "flex"]} justifyContent="center" alignItems="center" bg="#f66809" rounded="50%">
+            <Box w="22px" h="22px" display={["none", "none", "none"]} justifyContent="center" alignItems="center" bg="#f66809" rounded="50%">
                 <Text m="0px" fontSize="16px" fontWeight="400" color="white">0</Text>
             </Box>
           </Box>
