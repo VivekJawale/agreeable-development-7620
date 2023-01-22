@@ -1,13 +1,13 @@
 import React from 'react'
-import { Box, Link, Icon, Text } from '@chakra-ui/react';
-import ProtienFiltetComp from './ProtienFilterComp';
-import ProtienComp from './ProtienComp';
+import { Box, Link, Icon } from '@chakra-ui/react';
 import Navbar from '../Navbar';
 import SubNav from '../SubNav';
 import { RiHome2Fill } from 'react-icons/ri';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import GainerComp from './GainerComp';
+import GainerFilterComp from './GainerFilterComp';
 
-const Protiens = () => {
+const Gainer = () => {
   return (
     <Box>
       <Navbar />
@@ -19,23 +19,23 @@ const Protiens = () => {
             <Icon color="#2eb8b8" as={ChevronRightIcon} />
             <Link color="#2eb8b8" fontSize="14px">Sports Nutritions</Link>
             <Icon color="#2eb8b8" as={ChevronRightIcon} />
-            <Link href="/products/protiens" fontSize="14px">Proteins</Link>
+            <Link href="/products/gainers" fontSize="14px">Gainers</Link>
           </Box>
         </Box>
         <Box display={["none", "none", "flex"]} bg="white" color="black" w="95%" m="auto" justifyContent="space-between" pt="30px">
           <Box display={["none", "none", "inline"]} w={["0%", "0%", "21%"]}> 
-            <ProtienFiltetComp />
+            <GainerFilterComp />
           </Box>
           <Box w={["95%", "95%", "78%"]}>
-            <ProtienComp />
+            <GainerComp />
           </Box>
         </Box>
         <Box display={["inline","inline", "none"]} w={["95%", "95%", "78%"]}>
-            <ProtienComp />
+            <GainerComp />
         </Box>
       </Box>
     </Box>
   )
 }
 
-export default Protiens
+export default Gainer

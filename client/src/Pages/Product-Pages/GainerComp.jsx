@@ -5,7 +5,7 @@ import ProductCard from './ProductCard'
 import { useLocation, useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 
-const ProtienComp = () => {
+const GainerComp = () => {
 
 
   // const data= [
@@ -521,7 +521,7 @@ const handlePageChange = (value) => {
 
 
 const getData= (params)=>{
-  return axios.get(`https://lime-fawn-veil.cyclic.app/product?category=proteinfoods&page=${page}&limit=21`, params)
+  return axios.get(`https://lime-fawn-veil.cyclic.app/product?category=gainers&page=${page}&limit=21`, params)
       .then((r)=>{
         setData(r.data)
       })
@@ -557,4 +557,4 @@ const getData= (params)=>{
   )
 }
 
-export default ProtienComp
+export default GainerComp

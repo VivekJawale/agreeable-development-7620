@@ -94,10 +94,10 @@ const handleHoverbestSellers= ()=>{
                   <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Soy Proteins</Link><br/>
                 </Box>
                 <Box w="19%">
-                  <Link  _hover={{color:"#29a3a3"}} fontWeight="bold">Gainers</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Weight Gainers</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Mass Gainers</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Herbal Weight Gainers</Link><br/>
+                  <Link  href="/products/gainers" _hover={{color:"#29a3a3"}} fontWeight="bold">Gainers</Link><br/>
+                  <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Weight Gainers</Link><br/>
+                  <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Mass Gainers</Link><br/>
+                  <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Herbal Weight Gainers</Link><br/>
                 </Box>
                 <Box w="19%">
                   <Link  _hover={{color:"#29a3a3"}} fontWeight="bold">Protein Foods</Link><br/>
