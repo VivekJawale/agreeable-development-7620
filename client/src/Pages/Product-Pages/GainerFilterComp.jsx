@@ -3,13 +3,13 @@ import { Box, Icon, Checkbox, Divider, Input, Text, Radio } from '@chakra-ui/rea
 import { useSearchParams } from 'react-router-dom'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
-const ProtienFiltetComp = () => {
+const GainerFilterComp = () => {
 
-    const categories= [{value:"whey", name:"Whey Proteins"}, {value:"raw", name:"Raw Whey Proteins"},
-    {value:"isolate", name:"Whey Protein Isolate"}, {value:"soy", name:"Soy Proteins"},
-    {value:"plant", name:"Plant Proteins"}, {value:"peanut", name:"Peanut Butter"},
-    {value:"snack", name: "Snack Bars"}, {value:"Muesli", name:"High Protein Muesli"},
-    {value:"oats", name:"Oats"}
+    const categories= [{value:"muscle mass", name:"Muscle Building"},{value:"lean", name:"Lean Muscle Mass"},
+    {value:"bulk", name:"Bulking Up"},
+    {value:"whey", name:"Whey Proteins"}, {value:"beginner", name:"Beginners Whey Protein"},
+    {value:"raw", name:"Raw Whey Proteins"}, {value:"blend", name: "Protein Blends"}, 
+    {value:"isolate", name:"Whey Protein Isolate"}, {value:"plantproteins", name:"Plant Proteins"}
     ];
 
     const discounts= [20, 40, 60, 80];
@@ -187,4 +187,4 @@ const ProtienFiltetComp = () => {
   )
 }
 
-export default ProtienFiltetComp
+export default GainerFilterComp

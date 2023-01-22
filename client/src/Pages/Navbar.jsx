@@ -235,9 +235,9 @@ const Navbar = () => {
                     <Icon m="0px" _hover={{color:"#29a3a3"}} as={gainerShow? MinusIcon : AddIcon} />
                   </Box>
                   <Box fontSize="17px" display={gainerShow? ["inline", "inline", "none"] : "none"}>
-                    <Link  _hover={{color:"#29a3a3"}}>Weight Gainers</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Mass Gainers</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Herbal Weight Gainers</Link><br/>
+                    <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Weight Gainers</Link><br/>
+                    <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Mass Gainers</Link><br/>
+                    <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Herbal Weight Gainers</Link><br/>
                   </Box>
                 </Box>
                 <Box w="90%" m="0px" pt="3px">
@@ -329,9 +329,9 @@ const Navbar = () => {
                     <Icon m="0px" _hover={{color:"#29a3a3"}} as={healthNutrition? MinusIcon : AddIcon} />
                   </Box>
                   <Box fontSize="19px" display={healthNutrition? ["inline", "inline", "none"] : "none"}>
-                    <Link  _hover={{color:"#29a3a3"}}>Weight Gainers</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Mass Gainers</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Herbal Weight Gainers</Link><br/>
+                    <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Weight Gainers</Link><br/>
+                    <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Mass Gainers</Link><br/>
+                    <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Herbal Weight Gainers</Link><br/>
                   </Box>
                 </Box>
                 <Box w="85%" m="auto" pt="3px" borderBottom="1px solid grey" p="10px 0px">

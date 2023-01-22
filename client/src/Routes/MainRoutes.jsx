@@ -8,6 +8,7 @@ import Wishlist from '../Pages/Wishlist';
 import SingleProduct from "../Pages/SingleProduct";
 import MyAccount from '../Pages/MyAccount';
 import MainScreen from '../Pages/PaymentPage/MainScreen';
+import Gainer from '../Pages/Product-Pages/Gainer';
 const MainRoutes = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const MainRoutes = () => {
         <Route path='/' element={<Home />}></Route>
         <Route path='/admin' element={<Admin />}></Route>
         <Route path='/products/protiens' element={<Protiens />}></Route>
+        <Route path='/products/gainers' element={<Gainer />}></Route>
         <Route path='/products/:id' element={<SingleProduct />}></Route>
         <Route path='/wishlist' element={<Wishlist />}></Route>
         <Route path='/cart' element={<Cart />}></Route>
