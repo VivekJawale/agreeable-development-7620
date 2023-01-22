@@ -512,11 +512,11 @@ const getData= ()=>{
     <Box>
       <Box justifyContent="right" display="flex" alignItems="center" mb="15px">
         <Box border="1px solid gray" p="5px 10px" justifyContent="center" display="flex" alignItems="center">
-          <Text w="100%" m="0" fontSize="17px" fontWeight="600">Sort By: </Text>
-          <Select border="1px solid white" outline="1px solid white" fontSize="15px" bg="white" color="white" onChange={handleSort}>
-              <option p="5px" value="" name="sortBy">Popularity</option>
-              <option p="5px" value="asc" name="sortBy">Price: Low to High</option>
-              <option p="5px" value="desc" name="sortBy">Price: High to Low</option>
+          <Text w="40%" m="0" fontSize={["14px", "15px", "17px"]} fontWeight="600">Sort By: </Text>
+          <Select w="100%" border="none" outline="2px solid white" fontSize={["14px", "15px", "17px"]} bg="white" color="black" onChange={handleSort}>
+              <option p="10px" value="" name="sortBy">Popularity</option>
+              <option p="10px" value="asc" name="sortBy">Price: Low to High</option>
+              <option p="10px" value="desc" name="sortBy">Price: High to Low</option>
           </Select>
         </Box>
       </Box>

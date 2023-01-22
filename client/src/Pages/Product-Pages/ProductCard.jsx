@@ -22,7 +22,7 @@ const ProductCard = ({ props }) => {
         </Box>
         <Icon boxSize="30px" color="#424040" as={BiHeart} />
       </Box>
-      <Image w="60%" src={props.image} alt="img" />
+      <Image w="60%" m="auto" h="180px" src={props.image} alt="img" />
       <Box borderTop="1px solid #B8B8B8" textAlign="left" padding="10px">
         <Box display="flex" justifyContent="space-between" alignItems="center" >
           <Box w="100%" display="flex" justifyContent="space-between" alignItems="center" mt={2} mb={4}>
@@ -30,7 +30,7 @@ const ProductCard = ({ props }) => {
               <Text m="0" color="white" fontSize="15px">{props.star_rating}</Text>
               <Icon m="0" boxSize={4} color="white" as={AiFillStar} />
             </Box>
-            <Text fontSize="16px">{props.star_rating} reviews</Text>
+            <Text fontSize="16px">{props.flexing_reviews}</Text>
           </Box>
         </Box>
         <Text h="45px" overflow="clip" fontFamily="'Trebuchet MS', sans-serif" color="#424040" mb={5} >{props.name}</Text>

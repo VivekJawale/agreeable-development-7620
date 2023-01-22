@@ -68,7 +68,8 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <SubNav />
+        <div style={{paddingTop: "70px"}}>
+        <SubNav />
         <Slider/>
           <Carousel
               className='prod-slider'
@@ -249,6 +250,7 @@ const Home = () => {
             </Row>
         </Container>
         <Footer/>
+        </div>
     </div>
   )
 }
