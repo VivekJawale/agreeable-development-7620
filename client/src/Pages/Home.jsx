@@ -92,7 +92,7 @@ const Home = () => {
               itemClass="carousel-item-padding-40-px"
           >
              {data && data.map((el)=>{
-              return <div className='item'><ProductCard key={el.id} props={el} /></div>
+              return <div className='item'><ProductCard key={el._id} props={el} /></div>
             })}  
 
           </Carousel>

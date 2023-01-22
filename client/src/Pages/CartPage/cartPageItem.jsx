@@ -3,20 +3,20 @@ import React, { useState } from "react";
 import Styles from "./CartItem.module.css";
 import {RiDeleteBin6Line} from "react-icons/ri"
 import {BsHeart} from "react-icons/bs"
-export default function CartItem() {
-  const [quantity, setQuantity] = useState(data.quantity);
+export default function CartItem({data}) {
+ const [quantity,setQuantity]=useState(1);
   return (
     <Flex className={Styles.main}>
       <VStack className={Styles.main1}>
-        <Image src={data.img} alt={ data.title} />
+        <Image src={data.image} alt={ data.name} />
       </VStack>
       <Box className={Styles.main2}>
-        <Text as="h3">{data.title}</Text>
+        <Text as="h3">{data.name}</Text>
         <HStack>
           <HStack>
 
-          <Text as="h3">₹ { data.price}</Text>
-          <Text as="h3">{data.off}% OFF</Text>
+          <Text as="h3">₹ { data.price1}</Text>
+          <Text as="h3">{data.discount}% OFF</Text>
           </HStack>
           <HStack>
 
@@ -24,7 +24,7 @@ export default function CartItem() {
             <Image src="https://static1.hkrtcdn.com/hknext/static/media/common/earn-hk-cash.svg"/>
           </HStack>
         </HStack>
-        <Text as="h3">MRP : <span className={Styles.mrp}>₹{data.mrp}</span></Text>
+        <Text as="h3">MRP : <span className={Styles.mrp}>₹{data.price2}</span></Text>
         <Flex>
           <button onClick={()=>setQuantity(quantity-1)} disabled={quantity===1}>-</button>
           <button>{quantity }</button>
@@ -39,11 +39,3 @@ export default function CartItem() {
   );
 }
 
-const data = {
-  img: "https://img3.hkrtcdn.com/22586/prd_2258522_c_t.jpg",
-  title: "HealthKart HK Vitals Super Strength Fish Oil Purity 84%, 60 softgels",
-  price: 599,
-  mrp:999,
-  off: 40,
-  quantity: 1,
-};

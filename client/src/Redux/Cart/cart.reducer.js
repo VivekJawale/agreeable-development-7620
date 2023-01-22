@@ -1,10 +1,20 @@
-import { AddAddress, AddCart } from "./cart.types";
+import * as types from "./cart.types";
 
-const initialState = { onCart: false, onAdd: false }
-export const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case AddCart: return { ...state, onCart: true };
-        case AddAddress: return { ...state, onAdd: true, onCart: true };
-        default: return state;
+const initialstate=[];
+
+export const reducer = (state = initialstate, action) => {
+    const { type, payload } = action;
+
+    switch (type) {
+        case types.ADD_CART_ITEMS: {
+            return payload  
+        }
+        case types.CLEAR_CART_CHECKOUT: {
+            return []
+        }
+        case types.REMOVE_ITEM_FROM_CART: {
+            return payload
+        }
+        default: return state
     }
 }

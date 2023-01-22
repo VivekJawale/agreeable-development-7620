@@ -17,7 +17,6 @@ export default function Summery() {
   const dispatch = useDispatch();
 
   const proceedToPay = () => {
-    dispatch(handleAddCart())
     return <Address/>
   }
   return (
