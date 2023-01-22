@@ -41,11 +41,11 @@ const ProductCard = ({ props }) => {
         </Box>
         <Box bg="#f1f4f4">
           <Box w="100%" m="auto" p="0" display="flex" justifyContent="space-between" alignItems="center" >
-            <Box boxSize="22px" display="flex" justifyContent="center" alignItems="center" border="1px solid #f66809" rounded="50%">
-              <Icon m="0" boxSize={4} color="#f66809" as={AiFillStar}/>
+            <Box boxSize="20px" display="flex" justifyContent="center" alignItems="center" border="1px solid #f66809" rounded="50%">
+              <Icon m="0" boxSize={3} color="#f66809" as={AiFillStar}/>
             </Box>
-            <Text color="#424040" fontSize="16px">₹ {props.bold ? props.bold : props.price1}</Text>
-            <Text color="#424040" fontSize="16px"> for Premium Member</Text>
+            <Text color="#424040" fontSize="14px">₹ {props.bold ? props.bold : props.price1}</Text>
+            <Text color="#424040" fontSize="14px"> for Premium Member</Text>
           </Box>
         </Box>
         <Button onClick={handlecart} _hover={{ bg: "#f66809", color: "white" }} mt="15px" fontWeight="bold" bg="white" w="100%" fontSize="16px"

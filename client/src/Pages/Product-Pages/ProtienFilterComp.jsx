@@ -23,11 +23,12 @@ const ProtienFiltetComp = () => {
 
     const [searchParams, setSearchParams]= useSearchParams();
 
+
     const initialCategory= searchParams.getAll("category");
-    const initialSort= searchParams.getAll("sort");
-    const initialDiscount= searchParams.getAll("discount");
+    const initialSort= searchParams.getAll("priceSort");
+    const initialDiscount= searchParams.getAll("discountByCat");
     const initialRating= searchParams.getAll("rating");
-    const initialPrice= searchParams.getAll("price");
+    const initialPrice= searchParams.getAll("priceByCat");
 
 
     const [category, setCategory]= useState(initialCategory || []);
@@ -78,10 +79,10 @@ const ProtienFiltetComp = () => {
     useEffect(()=>{
         let params={};
         category && (params.category= category);
-        discountvalue && (params.discount=discountvalue);
+        discountvalue && (params.discountByCat=discountvalue);
         ratingvalue && (params.rating=ratingvalue);
-        pricevalue && (params.price= pricevalue);
-        sort && (params.sort= sort);
+        pricevalue && (params.priceByCat= pricevalue);
+        sort && (params.priceSort= sort);
         setSearchParams(params);
     }, [category, setCategory, setSearchParams, searchParams, sort, discountvalue, ratingvalue, pricevalue]);
 
