@@ -247,14 +247,14 @@ const Navbar = () => {
                     <Icon m="0px" _hover={{color:"#29a3a3"}}  as={protienfoodsShow? MinusIcon : AddIcon} />
                   </Box>
                   <Box fontSize="17px" display={protienfoodsShow? ["inline", "inline", "none"] : "none"}>
-                    <Link  _hover={{color:"#29a3a3"}}>Peanut Butter</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Muesli</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Protein Shakes</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Oats</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Cereals</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Granola</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Protein Bars</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Protein Water</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Peanut Butter</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Muesli</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Shakes</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Oats</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Cereals</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Granola</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Bars</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Water</Link><br/>
                   </Box>
                 </Box>
                 <Box w="90%" m="0px" pt="3px">
@@ -341,14 +341,14 @@ const Navbar = () => {
                     <Icon m="0px" _hover={{color:"#29a3a3"}}  as={fitness? MinusIcon : AddIcon} />
                   </Box>
                   <Box fontSize="19px" display={fitness? ["inline", "inline", "none"] : "none"}>
-                    <Link  _hover={{color:"#29a3a3"}}>Peanut Butter</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Muesli</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Protein Shakes</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Oats</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Cereals</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Granola</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Protein Bars</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Protein Water</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Peanut Butter</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Muesli</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Shakes</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Oats</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Cereals</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Granola</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Bars</Link><br/>
+                    <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Water</Link><br/>
                   </Box>
                 </Box>
                 <Box w="85%" m="auto" pt="3px" borderBottom="1px solid grey" p="10px 0px">
