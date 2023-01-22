@@ -100,15 +100,15 @@ const handleHoverbestSellers= ()=>{
                   <Link  href="/products/gainers" _hover={{color:"#29a3a3"}}>Herbal Weight Gainers</Link><br/>
                 </Box>
                 <Box w="19%">
-                  <Link  _hover={{color:"#29a3a3"}} fontWeight="bold">Protein Foods</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Peanut Butter</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Muesli</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Protein Shakes</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Oats</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Cereals</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Granola</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Protein Bars</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Protein Water</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}} fontWeight="bold">Protein Foods</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Peanut Butter</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Muesli</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Shakes</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Oats</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Cereals</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Granola</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Bars</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Water</Link><br/>
                 </Box>
                 <Box w="19%">
                   <Link fontWeight="bold">Pre/Post Workout</Link><br/>
