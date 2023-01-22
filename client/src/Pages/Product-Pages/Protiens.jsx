@@ -12,7 +12,7 @@ const Protiens = () => {
       <Box pt={["90px", "90px", "70px"]}>
         <SubNav />
         <Box display={["none", "none", "flex"]} bg="white" color="black" w="95%" m="auto" justifyContent="space-between" pt="30px">
-          <Box display={["none", "none", "inline"]} w={["0%", "0%", "19%"]}> 
+          <Box display={["none", "none", "inline"]} w={["0%", "0%", "21%"]}> 
             <ProtienFiltetComp />
           </Box>
           <Box w={["95%", "95%", "78%"]}>
