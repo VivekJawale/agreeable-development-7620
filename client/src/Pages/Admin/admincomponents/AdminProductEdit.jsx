@@ -67,10 +67,10 @@ const AdminProductEdit = (props) => {
             swal("Product updated successfuully!", {
               icon: "success",
             });
-            setTimeout(() => {
-              window.location.reload();
-            }, 3000);
-            // console.log(res);
+            // setTimeout(() => {
+            //   window.location.reload();
+            // }, 3000);
+            console.log(props.onHide());
           })
 
           .catch((err) => {
@@ -100,6 +100,7 @@ const AdminProductEdit = (props) => {
       size="lg md sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      style={{marginTop:"50px",paddingBottom:"50px"}}
     >
       <Modal.Header closeButton>
         <Modal.Title

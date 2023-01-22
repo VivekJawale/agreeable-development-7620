@@ -64,7 +64,7 @@ const AddNewProduct = (props) => {
               swal("Product has been added to Database", {
                 icon: "success",
               });
-              window.location.reload();
+              console.log(props.onHide());
             }
           })
           .catch((err) => {
@@ -84,6 +84,7 @@ const AddNewProduct = (props) => {
       size="lg md sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      style={{marginTop:"50px",paddingBottom:"50px"}}
     >
       <Modal.Header closeButton>
         <Modal.Title

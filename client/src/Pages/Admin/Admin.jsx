@@ -30,6 +30,7 @@ const Admin = () => {
   const [totalPages,SetTotalPages]=useState(41);
   const [sort,setSort]=useState("");
 
+
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
@@ -99,7 +100,7 @@ const Admin = () => {
 
   return (
     <>
-    <Navbar/>
+    <Navbar />
       <div className="welcome_admin">
         <div className="bubbles">
           <div className="bubble"></div>
