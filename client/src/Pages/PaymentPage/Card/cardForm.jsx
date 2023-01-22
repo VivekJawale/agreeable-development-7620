@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const currentYear = new Date().getFullYear();
@@ -33,7 +33,7 @@ export default function CForm({
         onUpdateState(name, value);
     };
 
- 
+
     const onCardNumberChange = (event) => {
         let { value, name } = event.target;
         let cardNumber = value;
@@ -176,7 +176,7 @@ export default function CForm({
                         </div>
                     </div>
                 </div>
-            <button style={{width:"100%", backgroundColor:"rgb(0,181,181)", color:"white", padding:"5px", marginTop:"5px", borderRadius:"10px"}} onClick={OrderConfirm}>Payment</button>
+                <button style={{ width: "100%", backgroundColor: "rgb(0,181,181)", color: "white", padding: "5px", marginTop: "5px", borderRadius: "10px" }} onClick={OrderConfirm}>Payment</button>
             </div>
         </div>
     );

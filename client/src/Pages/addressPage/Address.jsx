@@ -14,12 +14,8 @@ import Cart from '../Cart'
 
 export default function Address() {
   const navigate = useNavigate();
-  const cartData = useSelector((store) => store.ProductReducer.CartData);
+  const cartData = useSelector((store) => store.CartReducer);
 
-  if (cartData) {
-    // navigate("/cart")
-    return <Cart/>
-  }
   return (
       <Box display="flex" width="80%" margin="auto" p="2vh 0" gap={10}>
           <Box width="70%">

@@ -100,7 +100,7 @@ const Admin = () => {
 
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
       <div className="welcome_admin">
         <div className="bubbles">
           <div className="bubble"></div>

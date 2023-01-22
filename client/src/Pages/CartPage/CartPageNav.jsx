@@ -1,5 +1,5 @@
 import { Box, Flex, Image } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import Styles from "./CartNav.module.css"
 import { CgShoppingCart } from "react-icons/cg"
 import { SlLocationPin } from "react-icons/sl"
@@ -9,7 +9,7 @@ import {BsCheckCircleFill} from 'react-icons/bs'
 
 export default function CartNavbar() {
 
-    const { onCart, onAdd } = useSelector((b) => { return { onCart: b.cartReducer.onCart, onAdd: b.cartReducer.onAdd } }, shallowEqual);
+    const { onCart, onAdd } = useState([])
 
   return (
       <Flex className={Styles.main}>
