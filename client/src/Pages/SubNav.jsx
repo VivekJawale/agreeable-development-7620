@@ -23,9 +23,9 @@ const handleHoverbestSellers= ()=>{
 
 
   return (
-    <Box>
+    <Box display={["none", "none", "inline"]}>
       <Box>
-        <Box w="80%" p="7px 0px" m="auto" mb="0px" display="flex" justifyContent="space-between" alignItems="center">
+        <Box w="80%" p="17px 0px" m="auto" mb="0px" display="flex" justifyContent="space-between" alignItems="center">
           <Box onClick={()=>handleHoverallcategory()} p="7px 17px" border="1px solid #a6a6a6" rounded="5px" display="flex" justifyContent="space-between" alignItems="center" >
             <Icon color="#2eb8b8" boxSize="22px" as={HiMenuAlt1} />
             <Text color="#595959" m="0">Shop By Category</Text>
@@ -35,7 +35,7 @@ const handleHoverbestSellers= ()=>{
               <Icon color="#666666" as={RiCoupon3Fill} />
               <Text _hover={{ color:"#2eb8b8"}} fontSize="16px" color="#333333">Deals</Text>
             </Link>
-            <Link onClick={()=>handleHoverbestSellers()} display="flex" justifyContent="space-between" alignItems="center">
+            <Link onClick={()=>handleHoverbestSellers()} gap="5px" display="flex" justifyContent="space-between" alignItems="center">
               <Icon color="#2eb8b8" as={FaTag} />
               <Text _hover={{ color:"#2eb8b8"}} fontSize="16px" color="#333333">Best Sellers</Text>
             </Link>
@@ -82,16 +82,16 @@ const handleHoverbestSellers= ()=>{
             <Box w="75%" fontSize="15px">
               <Box className='sportsnutritiondiv' display="flex" justifyContent="space-between">
                 <Box w="20%">
-                  <Link  _hover={{color:"#29a3a3"}} fontWeight="bold">Proteins</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Whey Proteins</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Beginners Whey Protein</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Whey Protein Isolate</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Raw Whey Proteins</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Plant Proteins</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Protein for Women</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Protein Blends</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Casein Proteins</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Soy Proteins</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}} fontWeight="bold">Proteins</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Whey Proteins</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Beginners Whey Protein</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Whey Protein Isolate</Link><br/>
+                  <Link _hover={{color:"#29a3a3"}}>Raw Whey Proteins</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Plant Proteins</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Protein for Women</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Protein Blends</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Casein Proteins</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Soy Proteins</Link><br/>
                 </Box>
                 <Box w="19%">
                   <Link  _hover={{color:"#29a3a3"}} fontWeight="bold">Gainers</Link><br/>
