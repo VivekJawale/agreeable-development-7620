@@ -46,7 +46,7 @@ const Navbar = () => {
   }
 
   return (
-    <Box  p="10px 0px" boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px" >
+    <Box bg="white" zIndex={9999} w="100%" position="fixed" p="10px 0px" boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px" >
       <Box display="flex" w={["100%", "95%", "85%"]} m="auto" justifyContent="space-between" alignItems="center">
         <Box display="flex">
         <IconButton  aria-label="Open Menu"  bg="none" size="lg" p="0px" _hover={{bg:"none"}} mr={1} color="black" icon={<HamburgerIcon w="1.5em" h="1.5em" />}  display={["flex","flex","none"]} onClick={()=> changeDisplay('flex')} />
