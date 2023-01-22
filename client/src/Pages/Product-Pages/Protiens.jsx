@@ -9,15 +9,18 @@ const Protiens = () => {
   return (
     <Box>
       <Navbar />
-      <Box pt="70px">
+      <Box pt={["90px", "90px", "70px"]}>
         <SubNav />
-        <Box display="flex" bg="white" color="black" w="95%" m="auto" justifyContent="space-between" pt="100px">
+        <Box display={["none", "none", "flex"]} bg="white" color="black" w="95%" m="auto" justifyContent="space-between" pt="30px">
           <Box display={["none", "none", "inline"]} w={["0%", "0%", "19%"]}> 
             <ProtienFiltetComp />
           </Box>
           <Box w={["95%", "95%", "78%"]}>
             <ProtienComp />
           </Box>
+        </Box>
+        <Box display={["inline","inline", "none"]} w={["95%", "95%", "78%"]}>
+            <ProtienComp />
         </Box>
       </Box>
     </Box>

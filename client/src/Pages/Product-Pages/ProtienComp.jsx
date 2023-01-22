@@ -2,10 +2,11 @@ import { Box, Button, Select, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import ProductCard from './ProductCard'
-import { useSearchParams } from 'react-router-dom'
+import { useLocation, useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 
 const ProtienComp = () => {
+
 
   // const data= [
   //   {
@@ -465,8 +466,12 @@ const ProtienComp = () => {
   //     "msg-content": ""
   //   }
   // ]
+
+  const [ page, setPage]= useState(1);
   
   const [searchParams, setSearchParams]= useSearchParams();
+
+  const location= useLocation();
 
   const initialSort= searchParams.getAll("priceSort");
 
@@ -488,22 +493,38 @@ useEffect(()=>{
     pricevalue && (params.priceByCat= pricevalue);
     sort && (params.priceSort= sort);
     setSearchParams(params);
-}, [setSearchParams, searchParams, sort, discountValue, sort, category,  ratingvalue, pricevalue])
+}, [setSearchParams, searchParams, sort, discountValue, category,  ratingvalue, pricevalue]);
+
 
 
   
 const [data, setData]= useState([]);
 
 useEffect(()=>{
-  if(data.length===0){
-      getData();
+  if(location || data.length===0){
+      const getDataParams={
+          params: {
+            input: category&&category,
+            priceSort: sort&&sort,
+            discountByCat: discountValue&&discountValue,
+            priceByCat:pricevalue&&pricevalue
+          }
+      }
+      getData(getDataParams);
   }
-}, [data.length])
+}, [data.length, location.search, page, searchParams]);
+
+const handlePageChange = (value) => {
+  setPage(page + value);
+};
 
 
-const getData= ()=>{
-  return axios.get("https://lime-fawn-veil.cyclic.app/product?category=proteinfoods")
-      .then((r)=>setData(r.data))
+
+const getData= (params)=>{
+  return axios.get(`https://lime-fawn-veil.cyclic.app/product?category=proteinfoods&page=${page}&limit=21`, params)
+      .then((r)=>{
+        setData(r.data)
+      })
       .catch((e)=>console.log(e));
   }
 
@@ -511,9 +532,9 @@ const getData= ()=>{
   return (
     <Box>
       <Box justifyContent="right" display="flex" alignItems="center" mb="15px">
-        <Box border="1px solid gray" p="5px 10px" justifyContent="center" display="flex" alignItems="center">
-          <Text w="40%" m="0" fontSize={["14px", "15px", "17px"]} fontWeight="600">Sort By: </Text>
-          <Select w="100%" border="none" outline="2px solid white" fontSize={["14px", "15px", "17px"]} bg="white" color="black" onChange={handleSort}>
+        <Box border="1px solid gray" rounded="10px" p="5px 10px" justifyContent="flex-start" display="flex" alignItems="center">
+          <Text w="30%" m="0" fontSize={["13px", "14px", "16px"]}>Sort By: </Text>
+          <Select w="70%" border="none" outline="2px solid white" fontSize={["13px", "14px", "16px"]} bg="white" color="black" onChange={handleSort}>
               <option p="10px" value="" name="sortBy">Popularity</option>
               <option p="10px" value="asc" name="sortBy">Price: Low to High</option>
               <option p="10px" value="desc" name="sortBy">Price: High to Low</option>
@@ -525,8 +546,12 @@ const getData= ()=>{
             return <ProductCard key={el.id} props={el} />
         })}
       </Box>
-      <Box mt="10px" textAlign="center" mb="20px">
-        <Button border="1px solid black" rounded="5px" fontWeight="bold" fontSize="16px" p="15px 15px">Load More</Button>
+      <Box w="50%" m="auto" mt="20px" textAlign="center" mb="20px" display="flex" gap="10px">
+      <Button border="1px solid black" rounded="5px" fontWeight="bold" fontSize="16px" p="15px 15px" disabled={page === 1} onClick={() => handlePageChange(-1)}>
+        PREV
+      </Button>
+      <Button border="1px solid black" rounded="5px" fontWeight="bold" fontSize="16px" p="15px 15px">{page}</Button>
+      <Button border="1px solid black" rounded="5px" fontWeight="bold" fontSize="16px" p="15px 15px" disabled={page === 23} onClick={() => handlePageChange(1)}>NEXT</Button>
       </Box>
     </Box>
   )
