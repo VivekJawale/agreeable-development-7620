@@ -282,12 +282,12 @@ const Navbar = () => {
                     <Icon m="0px" _hover={{color:"#29a3a3"}} as={workoutShow? MinusIcon : AddIcon} />
                   </Box>
                   <Box fontSize="17px" display={workoutShow? ["inline", "inline", "none"] : "none"}>
-                    <Link  _hover={{color:"#29a3a3"}}>Fat Burners</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Consult Services</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>L Carnitine</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Multivitamins for Bodybuilding</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Pre Hormone</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>ZMA</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Fat Burners</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Consult Services</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>L Carnitine</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Multivitamins for Bodybuilding</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Pre Hormone</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>ZMA</Link><br/>
                   </Box>
                 </Box>
               </Box>
@@ -358,15 +358,15 @@ const Navbar = () => {
                     <Icon m="0px" _hover={{color:"#29a3a3"}} as={wellness? MinusIcon : AddIcon} />
                   </Box>
                   <Box fontSize="19px" display={wellness? ["inline", "inline", "none"] : "none"}>
-                    <Link  _hover={{color:"#29a3a3"}}>Pre-Workout</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Creatine</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>BCAAs</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Carb Blends</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Electrolytes</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>EAA</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Nitric Oxide</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Other Supports</Link><br/>
-                    <Link  _hover={{color:"#29a3a3"}}>Citrulline Malate</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Pre-Workout</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Creatine</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>BCAAs</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Carb Blends</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Electrolytes</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>EAA</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Nitric Oxide</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Other Supports</Link><br/>
+                    <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Citrulline Malate</Link><br/>
                   </Box>
                 </Box>
               </Box>

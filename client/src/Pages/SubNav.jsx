@@ -123,13 +123,13 @@ const handleHoverbestSellers= ()=>{
                   <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Citrulline Malate</Link><br/>
                 </Box>
                 <Box w="19%">
-                  <Link  _hover={{color:"#29a3a3"}} fontWeight="bold">Workout Essentials</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Fat Burners</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Consult Services</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>L Carnitine</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Multivitamins for Bodybuilding</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Pre Hormone</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>ZMA</Link><br/>
+                  <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}} fontWeight="bold">Workout Essentials</Link><br/>
+                  <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Fat Burners</Link><br/>
+                  <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Consult Services</Link><br/>
+                  <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>L Carnitine</Link><br/>
+                  <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Multivitamins for Bodybuilding</Link><br/>
+                  <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>Pre Hormone</Link><br/>
+                  <Link href='/products/workoutessential' _hover={{color:"#29a3a3"}}>ZMA</Link><br/>
                 </Box>
               </Box>
             </Box>
