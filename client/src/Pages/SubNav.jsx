@@ -111,16 +111,16 @@ const handleHoverbestSellers= ()=>{
                   <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Water</Link><br/>
                 </Box>
                 <Box w="19%">
-                  <Link fontWeight="bold">Pre/Post Workout</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Pre-Workout</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Creatine</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>BCAAs</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Carb Blends</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Electrolytes</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>EAA</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Nitric Oxide</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Other Supports</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Citrulline Malate</Link><br/>
+                  <Link href="/products/prepostworkout" fontWeight="bold">Pre/Post Workout</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Pre-Workout</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Creatine</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>BCAAs</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Carb Blends</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Electrolytes</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>EAA</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Nitric Oxide</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Other Supports</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Citrulline Malate</Link><br/>
                 </Box>
                 <Box w="19%">
                   <Link  _hover={{color:"#29a3a3"}} fontWeight="bold">Workout Essentials</Link><br/>
@@ -154,20 +154,20 @@ const handleHoverbestSellers= ()=>{
             <Box w="58%" fontSize="15px">
               <Box className='sportsnutritiondiv' display="flex" justifyContent="space-between">
                 <Box>
-                  <Link  _hover={{color:"#29a3a3"}}>Protein Powder</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Whey Protein</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Beginners Whey Protein</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Whey Protein Isolate</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Mass Gainer</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>BCAA</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Fat Burners</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Pre Workout</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Creatine</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Protein Bars</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Weight Gainer</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Carb Blends</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Other Support</Link><br/>
-                  <Link  _hover={{color:"#29a3a3"}}>Casien Protein</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Protein Powder</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Whey Protein</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Beginners Whey Protein</Link><br/>
+                  <Link href="/products/protiens" _hover={{color:"#29a3a3"}}>Whey Protein Isolate</Link><br/>
+                  <Link href="/products/gainers" _hover={{color:"#29a3a3"}}>Mass Gainer</Link><br/>
+                  <Link href="/products/gainers" _hover={{color:"#29a3a3"}}>BCAA</Link><br/>
+                  <Link href="/products/gainers" _hover={{color:"#29a3a3"}}>Fat Burners</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Pre Workout</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Creatine</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Protein Bars</Link><br/>
+                  <Link href="/products/gainers" _hover={{color:"#29a3a3"}}>Weight Gainer</Link><br/>
+                  <Link href="/products/protienfoods" _hover={{color:"#29a3a3"}}>Carb Blends</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Other Support</Link><br/>
+                  <Link href="/products/prepostworkout" _hover={{color:"#29a3a3"}}>Casien Protein</Link><br/>
                 </Box>
               </Box>
             </Box>
