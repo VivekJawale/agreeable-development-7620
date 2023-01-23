@@ -63,36 +63,36 @@ HealthKart is dedicated to providing everything that you will need in your journ
 * Admin Functionalities.
 
 <h1>Home Page</h1>
-<img src="https://drive.google.com/file/d/1boSysXOhk8SNbUGwJQJQK5bacgKSmW7Q/view?usp=share_link" />
+<img src="https://i.postimg.cc/KzdBFNT6/homepage-healthkart.png" />
 <br />
 <hr />
 
 <h1>Nav Bar</h1>
-<img src="https://drive.google.com/file/d/1e5qJs6cgaSYkSLIo7V37GWxmoj4iI2At/view?usp=share_link" />
+<img src="https://i.postimg.cc/SRdSVQmg/navbar-healthkart.png" />
 <br />
 <hr />
 
 <h1>Product Page</h1>
-<img src="https://drive.google.com/file/d/1mWKwMluO0WXy9_fcm7tx2MHFdPLrQl_G/view?usp=share_link" />
+<img src="https://i.postimg.cc/GpDbVxc8/product-page-healthkart.png" />
 <br />
 <hr />
 
 
 
 <h1>Admin Page Intro</h1>
-<img src="https://drive.google.com/file/d/1q15Pk8DFAoW5yO8GhEKOCwIPmSZnGVV1/view?usp=share_link" />
+<img src="https://i.postimg.cc/nLqt0Vkq/admin-1-healthkart.png" />
 <br />
 <hr />
 
 
 <h1>Admin Page</h1>
-<img src="https://drive.google.com/file/d/1qZbRHSDWpAuKnxadGf6xkygthOBhLihj/view?usp=share_link" />
+<img src="https://i.postimg.cc/HsrR6sWj/admin-2-healthkart.png" />
 <br />
 <hr />
 
 
 <h1>Cart Page</h1>
-<img src="https://drive.google.com/file/d/12-lOvex89vcYL_bqrVuQAfwWV7_XYvol/view?usp=share_link" />
+<img src="https://i.postimg.cc/d1WN9gz8/cart-page-healthkart.png" />
 <br />
 <hr />
 
