@@ -35,7 +35,7 @@ HealthKart is dedicated to providing everything that you will need in your journ
 
 * Library - Redux (State Management) / Chakra-UI (Styling) + BootStrap / React-Router-Dom (Navigation).
 
-* Backend - Bode, Express, MongoDB
+* Backend - Node, Express, MongoDB
 
 * Deployment - Vercel & Cyclic.
 
