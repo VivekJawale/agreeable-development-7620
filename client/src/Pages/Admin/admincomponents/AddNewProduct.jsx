@@ -60,11 +60,11 @@ const AddNewProduct = (props) => {
           .post(`https://lime-fawn-veil.cyclic.app/product`, data_to_add)
           .then((res) => {
             console.log(res);
-            if (res.data) {
+            if (res.data || res.data=="product added successfull") {
               swal("Product has been added to Database", {
                 icon: "success",
               });
-              console.log(props.onHide());
+              // console.log(props.onHide());
             }
           })
           .catch((err) => {
